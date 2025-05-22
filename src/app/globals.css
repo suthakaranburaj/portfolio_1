@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Green & Black Theme Variables */
+  --green-theme-background: #0D0D0D;     /* Jet Black */
+  --green-theme-accent: #00FF87;         /* Neon Green */
+  --green-theme-secondary: #00B56A;      /* Emerald */
+  --green-theme-text-primary: #F1F1F1;   /* White */
+  --green-theme-text-secondary: #B0B0B0; /* Gray */
+  --green-theme-border: #1A1A1A;         /* Deep Gray */
+  --green-theme-cta: #39FF14;            /* Lime Accent */
 }
 
 @theme inline {
