@@ -1,11 +1,15 @@
 import React from 'react'
+import Components from '../index'
 
-function hero() {
+export function hero() {
   return (
-    <div>
-      
+    <div className="flex justify-between items-center w-[100%]">
+      <div className='w-[27%]'>
+        <Components.LeftHero />
+      </div>
+      <div>
+        <Components.RightHero />
+      </div>
     </div>
-  )
+  );
 }
-
-export default hero

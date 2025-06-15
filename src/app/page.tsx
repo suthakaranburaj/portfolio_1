@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Components from '@/components/index'
+
 export default function Home() {
   return (
-    <Components.BackgroundBeamsWithCollision>
-      <Components.FloatingDockDemo />
-    </Components.BackgroundBeamsWithCollision>
+    <div>
+      <Components.BackgroundBeamsWithCollision>
+        <Components.FloatingDockDemo />
+        <div className="px-20 w-[100vw] pt-6">
+          <Components.hero />
+        </div>
+      </Components.BackgroundBeamsWithCollision>
+    </div>
   );
 }
