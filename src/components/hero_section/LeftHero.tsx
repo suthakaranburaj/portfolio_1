@@ -15,8 +15,12 @@ export function LeftHero() {
     //     proximity={64}
     //     inactiveZone={0.01}
     //   />
-    <div className="w-[100%] border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_10px_0px_#1ca0fb]">
+    <div className="w-[380px] border-0.75 relative flex h-[560px] flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_10px_0px_#1ca0fb]">
       <div className="flex flex-col justify-around">
+        <div className="flex justify-between">
+          <p>Suthakar</p>
+          <p>SDE</p>
+        </div>
         <Image
           src={ProfilePic}
           alt="suthakar"
