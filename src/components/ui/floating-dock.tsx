@@ -44,7 +44,7 @@ const FloatingDockMobile = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className={cn("relative block md:hidden", className)}>
+    <div className={cn("relative block md:hidden ", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -103,7 +103,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900",
+        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900 dark:shadow-[0px_0px_17px_0px_#1ca0fb]",
         className
       )}
     >
@@ -183,7 +183,7 @@ function IconContainer({
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
               className="absolute -bottom-10 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 "
-              style={{ color: "var(--green-theme-accent)" }}
+              style={{ color: "var(--blue-theme-accent)" }}
             >
               {title}
             </motion.div>
@@ -193,7 +193,7 @@ function IconContainer({
           style={{
             width: widthIcon,
             height: heightIcon,
-            color: hovered ? "var(--green-theme-accent)" : undefined,
+            color: hovered ? "var(--blue-theme-accent)" : undefined,
           }}
           className="flex items-center justify-center"
         >
