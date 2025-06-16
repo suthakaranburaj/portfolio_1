@@ -45,7 +45,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="text-2xl font-bold text-green-400"
           >
-            YourName
+            Suthakar Anburaj
           </motion.a>
 
           {/* Desktop Navigation */}

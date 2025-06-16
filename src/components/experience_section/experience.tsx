@@ -8,41 +8,42 @@ import GridBackground from '../ui/grid-background';
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      location: "New York, USA",
+      title: "Junior Software Developer",
+      company: "Enpointe.io",
+      period: "2024 - Present",
+      location: "Mumbai, India",
       description: [
-        "Led the development of enterprise-level web applications using React, Node.js, and MongoDB",
-        "Implemented CI/CD pipelines reducing deployment time by 40%",
-        "Mentored junior developers and conducted code reviews",
-        "Optimized application performance resulting in 30% faster load times"
-      ]
+        "Developed and maintained full-stack features using Vue.js, Node.js, Express, SQL, and Prisma.",
+        "Built and optimized a scalable backend architecture for a movie platform serving 5k–10k daily users.",
+        "Implemented key modules including contract management, invoicing, royalty reporting, and user roles.",
+        "Integrated automated PDF/Excel generation and dynamic email notifications to streamline operations   ",
+        "Improved contract creation workflow efficiency by 50% through backend logic and UI enhancements.",
+        "Worked closely with cross-functional teams to ensure performance, data integrity, and feature delivery.",
+      ],
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Innovations",
-      period: "2020 - 2022",
-      location: "San Francisco, USA",
+      title: "Senior Technical Coordinator",
+      company: "Arena SIESGST",
+      period: "2024 - 2025",
+      location: "Navi Mumbai, India",
       description: [
-        "Developed and maintained multiple client projects using Next.js and Express",
-        "Collaborated with UX designers to implement responsive designs",
-        "Integrated third-party APIs and payment gateways",
-        "Implemented automated testing reducing bugs by 25%"
-      ]
+        "Redesigned and updated event pages to align with current-year activities.",
+        "Improved event registration flows based on user feedback for better UX.",
+        "Collaborated with tech and design teams to enhance digital outreach and engagement.",
+      ],
     },
-    {
-      title: "Frontend Developer",
-      company: "Web Solutions",
-      period: "2019 - 2020",
-      location: "Boston, USA",
-      description: [
-        "Built responsive user interfaces using React and TypeScript",
-        "Worked closely with backend team to integrate REST APIs",
-        "Implemented state management using Redux",
-        "Improved website accessibility and SEO"
-      ]
-    }
+    // {
+    //   title: "Frontend Developer",
+    //   company: "Web Solutions",
+    //   period: "2019 - 2020",
+    //   location: "Boston, USA",
+    //   description: [
+    //     "Built responsive user interfaces using React and TypeScript",
+    //     "Worked closely with backend team to integrate REST APIs",
+    //     "Implemented state management using Redux",
+    //     "Improved website accessibility and SEO",
+    //   ],
+    // },
   ];
 
   return (

@@ -1,31 +1,39 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
-import { IconCode, IconRocket, IconDeviceLaptop } from '@tabler/icons-react';
-import GridBackground from '../ui/grid-background';
+import React from "react";
+import { motion } from "motion/react";
+import { IconCode, IconRocket, IconServer } from "@tabler/icons-react";
+import GridBackground from "../ui/grid-background";
+import ProfilePic from "../../../assets/profile_pic2.jpeg";
+import Image from "next/image";
 
 const About = () => {
   const features = [
     {
       icon: <IconCode size={32} />,
       title: "Clean Code",
-      description: "Writing maintainable and scalable code following best practices and design patterns."
+      description:
+        "Writing maintainable and scalable code following best practices and design patterns.",
     },
     {
       icon: <IconRocket size={32} />,
       title: "Fast Performance",
-      description: "Optimizing applications for speed and efficiency to provide the best user experience."
+      description:
+        "Optimizing applications for speed and efficiency to provide the best user experience.",
     },
     {
-      icon: <IconDeviceLaptop size={32} />,
-      title: "Responsive Design",
-      description: "Creating beautiful and functional interfaces that work seamlessly across all devices."
-    }
+      icon: <IconServer size={32} />,
+      title: "Robust Backend Systems",
+      description:
+        "Designing scalable, secure, and high-performance backend architectures to power modern web applications.",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-b from-black to-gray-900 relative"
+    >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -49,10 +57,12 @@ const About = () => {
             className="relative"
           >
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-green-400">
-              <img
-                src="/path-to-your-image.jpg"
+              <Image
+                src={ProfilePic}
                 alt="About Me"
+                fill
                 className="object-cover w-full h-full"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-blue-500/20"></div>
             </div>
@@ -72,15 +82,21 @@ const About = () => {
               Full Stack Developer
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              I am a passionate Full Stack Developer with expertise in building modern web applications.
-              With a strong foundation in both frontend and backend technologies, I create seamless
-              digital experiences that combine beautiful design with robust functionality.
+              I'm always the first to take on complex and unique problems,
+              driven by a mindset that thrives on challenge and innovation. I
+              believe that every problem, no matter how tough, brings an
+              opportunity to learn and grow. My focus lies in crafting scalable
+              and efficient solutions that not only work but also make an
+              impact.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              My approach to development focuses on writing clean, maintainable code while
-              staying up-to-date with the latest technologies and best practices. I believe
-              in creating solutions that are not only technically sound but also provide
-              exceptional user experiences.
+              I specialize in building and optimizing high-complexity backend
+              and frontend functionalities for modern web applications. With a
+              strong foundation in both design and development, I turn intricate
+              problems into seamless, intuitive user experiences. Whether it's
+              creating powerful APIs, solving performance issues, or
+              architecting full-stack systems, I approach every task with
+              precision and creativity.
             </p>
 
             {/* Features Grid */}
@@ -94,14 +110,20 @@ const About = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                   className="p-6 bg-green-400/10 rounded-lg hover:bg-green-400/20 transition-colors"
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-green-400 mb-4"
                     animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                    }}
                   >
                     {feature.icon}
                   </motion.div>
-                  <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
+                  <h4 className="text-lg font-semibold mb-2">
+                    {feature.title}
+                  </h4>
                   <p className="text-gray-400 text-sm">{feature.description}</p>
                 </motion.div>
               ))}
@@ -122,4 +144,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

@@ -2,12 +2,12 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { 
-  IconBrandGithub, 
-  IconBrandLinkedin, 
-  IconBrandTwitter, 
-  IconCode, 
-  IconRocket, 
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconCode,
+  IconRocket,
   IconDeviceLaptop,
   IconBrandJavascript,
   IconBrandNodejs,
@@ -19,11 +19,16 @@ import {
   IconBrandMongodb,
   IconBrandPython,
   IconBrandAws,
-  IconBrandDocker
-} from '@tabler/icons-react';
+  IconBrandDocker,
+  IconFileCv,
+  IconBrandLeetcode,
+} from "@tabler/icons-react";
 import Typewriter from 'typewriter-effect';
 import { motion } from 'motion/react';
 import ProfilePic from '../../../assets/profile_pic.jpeg'
+import MyResume from   '../../../public/Suthakar_Anburaj_15_06_25.pdf'
+import { SiGeeksforgeeks, SiCodechef } from "react-icons/si";
+
 
 function Hero() {
   const roles = [
@@ -55,7 +60,7 @@ function Hero() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      
+
       {/* Decorative Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
@@ -106,11 +111,11 @@ function Hero() {
           </motion.div>
         ))}
       </div>
-      
+
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left side - Profile Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -134,7 +139,7 @@ function Hero() {
           </motion.div>
 
           {/* Right side - Text content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -153,7 +158,7 @@ function Hero() {
                 Hi, I'm <span className="text-green-400">Suthakar Anburaj</span>
               </h1>
             </div>
-            
+
             <div className="h-12 text-2xl md:text-3xl text-gray-300">
               <Typewriter
                 options={{
@@ -168,35 +173,39 @@ function Hero() {
 
             <div className="space-y-4">
               <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-                I build exceptional digital experiences that make an impact. 
-                Specializing in creating beautiful, functional, and user-centered websites and applications.
-                Passionate about turning complex problems into simple, beautiful, and intuitive solutions.
+                I'm always the first to take on complex and unique problems. I
+                believe every challenge teaches us something valuable. I
+                specialize in developing highly complex backend and frontend
+                functionalities, with a passion for turning tough problems into
+                simple, beautiful, and intuitive solutions.
               </p>
-              
+
               {/* Stats Section */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
-                  <div className="text-2xl font-bold text-green-400">3+</div>
+                  <div className="text-2xl font-bold text-green-400">1+</div>
                   <div className="text-sm text-gray-400">Years Experience</div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
-                  <div className="text-2xl font-bold text-green-400">20+</div>
-                  <div className="text-sm text-gray-400">Projects Completed</div>
+                  <div className="text-2xl font-bold text-green-400">16+</div>
+                  <div className="text-sm text-gray-400">
+                    Projects Completed
+                  </div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
-                  <div className="text-2xl font-bold text-green-400">15+</div>
+                  <div className="text-2xl font-bold text-green-400">5+</div>
                   <div className="text-sm text-gray-400">Happy Clients</div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
@@ -205,10 +214,20 @@ function Hero() {
                 </motion.div>
               </div>
             </div>
-            
+
             {/* Tech Stack Tags */}
             <div className="flex flex-wrap gap-2 pt-2">
-              {['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'MongoDB', 'AWS', 'Docker'].map((tech) => (
+              {[
+                "React",
+                "Next.js",
+                "Node.js",
+                "TypeScript",
+                "Python",
+                "MongoDB",
+                "AWS",
+                "Vue.js",
+                "Prisma",
+              ].map((tech) => (
                 <motion.span
                   key={tech}
                   whileHover={{ scale: 1.05 }}
@@ -218,54 +237,84 @@ function Hero() {
                 </motion.span>
               ))}
             </div>
-            
+
             {/* Social Links */}
             <div className="flex gap-4 pt-2">
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com/yourusername" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="https://github.com/suthakaranburaj"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <IconBrandGithub size={24} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://linkedin.com/in/yourusername" 
-                target="_blank" 
+                href="https://www.linkedin.com/in/suthakar-anburaj-7bb816290/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <IconBrandLinkedin size={24} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://twitter.com/yourusername" 
-                target="_blank" 
+                href="#"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <IconBrandX size={24} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://youtube.com/yourusername" 
-                target="_blank" 
+                href="https://www.youtube.com/@SuthakarAnburaj"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <IconBrandYoutube size={24} />
               </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://leetcode.com/u/suthakaranburaj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors"
+              >
+                <IconBrandLeetcode size={24} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.geeksforgeeks.org/user/suthakaranburaj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors"
+              >
+                <SiGeeksforgeeks size={24} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.codechef.com/users/suthakaranbu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors"
+              >
+                <SiCodechef size={24} />
+              </motion.a>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex gap-4 pt-4">
-              <motion.button 
+            <div className="flex gap-4 pt-1 ">
+              <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
@@ -273,13 +322,27 @@ function Hero() {
                 <IconRocket size={20} />
                 View Projects
               </motion.button>
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 border border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-colors"
               >
                 Contact Me
               </motion.button>
+              <a
+                href="/Suthakar_Anburaj_17_06_25.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
+                >
+                  <IconFileCv size={20} />
+                  Download CV
+                </motion.button>
+              </a>
             </div>
           </motion.div>
         </div>
