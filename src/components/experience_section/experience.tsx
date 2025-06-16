@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react';
+import GridBackground from '../ui/grid-background';
 
 const Experience = () => {
   const experiences = [
@@ -45,13 +46,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-gray-900 to-black">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
+      <GridBackground />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -67,43 +68,76 @@ const Experience = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="mb-12 relative"
             >
               {/* Timeline line */}
               {index !== experiences.length - 1 && (
-                <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-green-400/20"></div>
+                <motion.div 
+                  className="absolute left-6 top-16 bottom-0 w-0.5 bg-green-400/20"
+                  initial={{ height: 0 }}
+                  whileInView={{ height: "100%" }}
+                  transition={{ duration: 1, delay: index * 0.2 }}
+                />
               )}
               
               <div className="flex gap-6">
                 {/* Timeline dot */}
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-full bg-green-400/10 border-2 border-green-400 flex items-center justify-center">
+                  <motion.div 
+                    className="w-12 h-12 rounded-full bg-green-400/10 border-2 border-green-400 flex items-center justify-center"
+                    whileHover={{ scale: 1.1 }}
+                    animate={{ 
+                      boxShadow: ["0 0 0 0 rgba(74, 222, 128, 0.4)", "0 0 0 10px rgba(74, 222, 128, 0)"],
+                    }}
+                    transition={{
+                      boxShadow: {
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }
+                    }}
+                  >
                     <IconBriefcase className="text-green-400" size={24} />
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="bg-green-400/5 rounded-lg p-6 hover:bg-green-400/10 transition-colors">
+                  <motion.div 
+                    className="bg-green-400/5 rounded-lg p-6 hover:bg-green-400/10 transition-colors"
+                    whileHover={{ scale: 1.02, y: -5 }}
+                  >
                     <h3 className="text-xl font-bold text-green-400 mb-2">{exp.title}</h3>
                     <div className="flex flex-wrap gap-4 text-gray-400 mb-4">
-                      <div className="flex items-center gap-2">
+                      <motion.div 
+                        className="flex items-center gap-2"
+                        whileHover={{ scale: 1.05 }}
+                      >
                         <IconCalendar size={16} />
                         <span>{exp.period}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
+                      </motion.div>
+                      <motion.div 
+                        className="flex items-center gap-2"
+                        whileHover={{ scale: 1.05 }}
+                      >
                         <IconMapPin size={16} />
                         <span>{exp.location}</span>
-                      </div>
+                      </motion.div>
                     </div>
                     <h4 className="text-lg font-semibold mb-3">{exp.company}</h4>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
                       {exp.description.map((item, idx) => (
-                        <li key={idx}>{item}</li>
+                        <motion.li 
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        >
+                          {item}
+                        </motion.li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>

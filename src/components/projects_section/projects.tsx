@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import GridBackground from '../ui/grid-background';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -44,13 +45,13 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+      <GridBackground />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -64,7 +65,7 @@ const Projects = () => {
           {filters.map((filter) => (
             <motion.button
               key={filter}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter(filter)}
               className={`px-4 py-2 rounded-lg capitalize ${
@@ -86,16 +87,20 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="group"
             >
-              <div className="relative rounded-lg overflow-hidden bg-green-400/5 hover:bg-green-400/10 transition-colors">
+              <motion.div 
+                className="relative rounded-lg overflow-hidden bg-green-400/5 hover:bg-green-400/10 transition-colors"
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
                 {/* Project Image */}
                 <div className="relative aspect-video overflow-hidden">
-                  <img
+                  <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
+                    className="object-cover w-full h-full"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 </div>
@@ -112,12 +117,13 @@ const Projects = () => {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, idx) => (
-                      <span
+                      <motion.span
                         key={idx}
+                        whileHover={{ scale: 1.05, y: -2 }}
                         className="px-3 py-1 bg-green-400/10 text-green-400 rounded-full text-sm"
                       >
                         {tag}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
 
@@ -127,7 +133,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       className="text-gray-400 hover:text-green-400 transition-colors"
                     >
@@ -137,7 +143,7 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       className="text-gray-400 hover:text-green-400 transition-colors"
                     >
@@ -145,7 +151,7 @@ const Projects = () => {
                     </motion.a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
