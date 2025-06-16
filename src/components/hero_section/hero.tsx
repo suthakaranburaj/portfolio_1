@@ -155,7 +155,8 @@ function Hero() {
                 Welcome to my portfolio
               </motion.div>
               <h1 className="text-4xl md:text-6xl font-bold">
-                Hi, I'm <span className="text-green-400">Suthakar Anburaj</span>
+                Hi, I&apos;m{" "}
+                <span className="text-green-400">Suthakar Anburaj</span>
               </h1>
             </div>
 
@@ -173,8 +174,8 @@ function Hero() {
 
             <div className="space-y-4">
               <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-                I'm always the first to take on complex and unique problems. I
-                believe every challenge teaches us something valuable. I
+                I&apos;m always the first to take on complex and unique problems.
+                I believe every challenge teaches us something valuable. I
                 specialize in developing highly complex backend and frontend
                 functionalities, with a passion for turning tough problems into
                 simple, beautiful, and intuitive solutions.
