@@ -4,6 +4,7 @@ import About from '@/components/about_section/about';
 import Experience from '@/components/experience_section/experience';
 import Projects from '@/components/projects_section/projects';
 import Skills from '@/components/skills_section/skills';
+import Hackathon from '@/components/hackathon_section/hackathon';
 import Blog from '@/components/blog_section/blog';
 import YouTube from '@/components/youtube_section/youtube';
 import Contact from '@/components/contact_section/contact';
@@ -18,6 +19,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Skills />
+      <Hackathon />
       <Blog />
       <YouTube />
       <Contact />
