@@ -5,10 +5,10 @@ import Image from 'next/image';
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandTwitter,
-  IconCode,
+  // IconBrandTwitter,
+  // IconCode,
   IconRocket,
-  IconDeviceLaptop,
+  // IconDeviceLaptop,
   IconBrandJavascript,
   IconBrandNodejs,
   IconBrandReact,
@@ -26,7 +26,7 @@ import {
 import Typewriter from 'typewriter-effect';
 import { motion } from 'motion/react';
 import ProfilePic from '../../../assets/profile_pic.jpeg'
-import MyResume from   '../../../public/Suthakar_Anburaj_15_06_25.pdf'
+// import MyResume from   '../../../public/Suthakar_Anburaj_15_06_25.pdf'
 import { SiGeeksforgeeks, SiCodechef } from "react-icons/si";
 
 

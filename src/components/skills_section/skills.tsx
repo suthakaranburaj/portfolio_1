@@ -3,20 +3,20 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import GridBackground from '../ui/grid-background';
-import {
-  IconBrandJavascript,
-  IconBrandReact,
-  IconBrandNextjs,
-  IconBrandNodejs,
-  IconBrandTypescript,
-  IconBrandMongodb,
-  IconBrandPython,
-  IconBrandAws,
-  IconBrandDocker,
-  IconBrandGit,
-  IconBrandTailwind,
-  IconBrandFigma
-} from '@tabler/icons-react';
+// import {
+//   IconBrandJavascript,
+//   IconBrandReact,
+//   IconBrandNextjs,
+//   IconBrandNodejs,
+//   IconBrandTypescript,
+//   IconBrandMongodb,
+//   IconBrandPython,
+//   IconBrandAws,
+//   IconBrandDocker,
+//   IconBrandGit,
+//   IconBrandTailwind,
+//   IconBrandFigma
+// } from '@tabler/icons-react';
 
 const Skills = () => {
   const skillCategories = [

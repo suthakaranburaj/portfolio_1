@@ -82,19 +82,20 @@ const About = () => {
               Full Stack Developer
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              I'm always the first to take on complex and unique problems,
+              I&apos;m always the first to take on complex and unique problems,
               driven by a mindset that thrives on challenge and innovation. I
               believe that every problem, no matter how tough, brings an
               opportunity to learn and grow. My focus lies in crafting scalable
               and efficient solutions that not only work but also make an
               impact.
             </p>
+
             <p className="text-gray-300 leading-relaxed">
               I specialize in building and optimizing high-complexity backend
               and frontend functionalities for modern web applications. With a
               strong foundation in both design and development, I turn intricate
-              problems into seamless, intuitive user experiences. Whether it's
-              creating powerful APIs, solving performance issues, or
+              problems into seamless, intuitive user experiences. Whether
+              it&apos;s creating powerful APIs, solving performance issues, or
               architecting full-stack systems, I approach every task with
               precision and creativity.
             </p>

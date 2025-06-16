@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks, SiCodechef } from "react-icons/si";
-import { TEAL, PURPLE, YELLOW, BLUE, BLACKISH } from "@/components/colors";
+import { TEAL, PURPLE, YELLOW, BLUE } from "@/components/colors";
 
 const PlatformLogo = () => {
   const platforms = [
