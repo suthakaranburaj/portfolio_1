@@ -2,7 +2,6 @@
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
 import React, { useRef, useState, useEffect } from "react";
-
 export const BackgroundBeamsWithCollision = ({
   children,
   className,
