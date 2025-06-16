@@ -2,8 +2,6 @@
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
-import * as components from "@/components/colors"; // or wherever your color constants are
-
 export const BackgroundBeamsWithCollision = ({
   children,
   className,
