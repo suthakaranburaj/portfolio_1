@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <Components.BackgroundBeamsWithCollision>
         <Components.FloatingDockDemo />
-        <div className="px-20 w-[100vw] h-[100vh] py-auto ">
+        <div className="container w-full mx-5 p-4">
           <Components.hero />
         </div>
       </Components.BackgroundBeamsWithCollision>
