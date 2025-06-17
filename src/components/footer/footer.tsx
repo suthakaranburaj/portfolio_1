@@ -12,27 +12,27 @@ const Footer = () => {
     {
       icon: <IconBrandGithub size={24} />,
       name: "GitHub",
-      url: "https://github.com/yourusername"
+      url: "https://github.com/suthakaranburaj"
     },
     {
       icon: <IconBrandLinkedin size={24} />,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername"
+      url: "https://www.linkedin.com/in/suthakar-anburaj-7bb816290/"
     },
     {
       icon: <IconBrandTwitter size={24} />,
       name: "Twitter",
-      url: "https://twitter.com/yourusername"
+      url: "https://twitter.com"
     },
     {
       icon: <IconBrandYoutube size={24} />,
       name: "YouTube",
-      url: "https://youtube.com/@yourchannel"
+      url: "https://youtube.com/@SuthakarAnburaj"
     },
     {
       icon: <IconMail size={24} />,
       name: "Email",
-      url: "mailto:your.email@example.com"
+      url: "mailto:suthakaranburaj@gmail.com"
     }
   ];
 
@@ -99,9 +99,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-green-400 mb-4">Contact Info</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: your.email@example.com</li>
-              <li>Location: San Francisco, CA</li>
-              <li>Phone: +1 (555) 123-4567</li>
+              <li>Email: suthakaranburaj@gmail.com</li>
+              <li>Location: Mumbai, Maharashtra, India</li>
+              <li>Phone: +91 9321607843</li>
             </ul>
           </div>
 
@@ -132,7 +132,7 @@ const Footer = () => {
         <div className="border-t border-green-400/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-center md:text-left">
-              © {currentYear} Your Name. All rights reserved.
+              © {currentYear} Suthakar Anburaj. All rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">

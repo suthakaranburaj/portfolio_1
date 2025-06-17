@@ -30,19 +30,19 @@ const Contact = () => {
     {
       icon: <IconMail size={24} />,
       title: "Email",
-      content: "your.email@example.com",
-      link: "mailto:your.email@example.com"
+      content: "suthakaranburaj@gmail.com",
+      link: "mailto:suthakaranburaj@gmail.com"
     },
     {
       icon: <IconPhone size={24} />,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      content: "+91 9321607843",
+      link: "tel:+919321607843"
     },
     {
       icon: <IconMapPin size={24} />,
       title: "Location",
-      content: "San Francisco, CA",
+      content: "Mumbai, Maharashtra, India",
       link: "https://maps.google.com"
     }
   ];
@@ -51,17 +51,17 @@ const Contact = () => {
     {
       icon: <IconBrandGithub size={24} />,
       name: "GitHub",
-      url: "https://github.com/yourusername"
+      url: "https://github.com/suthakaranburaj"
     },
     {
       icon: <IconBrandLinkedin size={24} />,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername"
+      url: "https://www.linkedin.com/in/suthakar-anburaj-7bb816290/"
     },
     {
       icon: <IconBrandTwitter size={24} />,
       name: "Twitter",
-      url: "https://twitter.com/yourusername"
+      url: "https://twitter.com"
     }
   ];
 

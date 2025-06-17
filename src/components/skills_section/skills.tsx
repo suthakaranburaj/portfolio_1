@@ -23,12 +23,15 @@ const Skills = () => {
     {
       title: "Frontend Development",
       skills: [
-        { name: "HTML5", level: 90 },
-        { name: "CSS3", level: 85 },
         { name: "JavaScript", level: 90 },
         { name: "TypeScript", level: 85 },
         { name: "React", level: 90 },
         { name: "Next.js", level: 85 },
+        { name: "Vue.js", level: 90 },
+        { name: "Tailwind CSS", level: 85 },
+        { name: "Bootstrap", level: 80 },
+        { name: "Material UI", level: 80 },
+        { name: "Shadcn UI", level: 90 },
       ]
     },
     {
@@ -36,21 +39,31 @@ const Skills = () => {
       skills: [
         { name: "Node.js", level: 85 },
         { name: "Express", level: 80 },
-        { name: "Python", level: 75 },
+        { name: "Python", level: 65 },
         { name: "MongoDB", level: 80 },
         { name: "PostgreSQL", level: 75 },
         { name: "REST APIs", level: 85 },
+        { name: "Prisma", level: 85 },
+        { name: "Redis", level: 85 },
+        { name: "MySQL", level: 85 },
+        // { name: "", level: 80 },
       ]
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "Git", level: 85 },
-        { name: "Docker", level: 75 },
         { name: "AWS", level: 70 },
-        { name: "CI/CD", level: 75 },
-        { name: "Linux", level: 80 },
-        { name: "Nginx", level: 70 },
+        { name: "Git", level: 85 },
+        { name: "VS Code", level: 95 },
+        { name: "Cursor", level: 95 },
+        { name: "Linux", level: 70 },
+        { name: "Notion", level: 70 },
+        { name: "Asana", level: 70 },
+        { name: "Figma", level: 70 },
+        { name: "Canva", level: 70 },
+        // { name: "Framer", level: 70 },
+        // { name: "", level: 70 },
+
       ]
     }
   ];
