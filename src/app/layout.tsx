@@ -24,6 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html style={{overflowX: 'hidden'}} lang="en">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

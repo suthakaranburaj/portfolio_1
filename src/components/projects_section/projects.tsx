@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import { IconArrowRight, IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
+import Link from 'next/link';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -12,32 +13,38 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform built with Next.js, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
-      image: "/path-to-project-image-1.jpg",
-      tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-      category: "fullstack",
-      github: "https://github.com/yourusername/project1",
-      live: "https://project1.com"
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team features, and progress tracking. Built with React and Firebase.",
-      image: "/path-to-project-image-2.jpg",
-      tags: ["React", "Firebase", "Material-UI"],
+      title: "Pradha",
+      description: `Developed Pradha, a client-focused website using Next.js, MongoDB, Tailwind, Shadcn, and JavaScript for modern UI.
+      Implemented Redux for efficient state management and Redis for high-performance caching and data access.
+      Collaborated with the team to ensure seamless functionality, scalability, and a smooth user experience.`,
+      image: "/PradhaFrontend.png",
+      tags: ["MongoDB", "Next.js", "Shadcn","Tailwind","Redux","Redis","Javascript","Cloudinary"],
       category: "web",
-      github: "https://github.com/yourusername/project2",
-      live: "https://project2.com"
+      github: "https://github.com/suthakaranburaj/project_1_main",
+      live: "https://pradha-frontend.vercel.app/"
     },
     {
-      title: "Fitness Tracking App",
-      description: "A mobile application for tracking workouts, nutrition, and progress. Features include custom workout plans, progress charts, and social sharing.",
-      image: "/path-to-project-image-3.jpg",
-      tags: ["React Native", "Redux", "Node.js"],
-      category: "mobile",
-      github: "https://github.com/yourusername/project3",
-      live: "https://project3.com"
-    }
+      title: "Pradha Dashboard",
+      description: `Created an admin dashboard for Pradha to enable real-time management of products, users, and content.
+      Built with Next.js, Tailwind, and Shadcn, ensuring a clean, responsive, and intuitive interface.
+      Focused on delivering a smooth admin experience with efficient workflows and easy content control.`,
+      image: "/pradhaDashboard.png",
+      tags: ["Next.js", "Node.js","MongoDB","Tailwind","Shadcn","Javascript","Cloudinary"],
+      category: "web",
+      github: "https://github.com/suthakaranburaj/pradha_dashboard",
+      live: "https://pradha-dashboard.vercel.app"
+    },
+    {
+      title: "ClipVerse",
+      description: `Developed a YouTube-inspired platform using React, Node.js, Express, MongoDB, and Zustand with secure JWT authentication.
+      Implemented video upload, edit, delete, likes, comments, subscriptions, playlists, and tweet-like interactions.
+      Integrated Cloudinary for efficient video and thumbnail storage to enhance media management.`,
+      image: "/clipVerse.png",
+      tags: ["React", "Node.js", "MongoDB", "Zustand", "Cloudinary","Express","JWT","SCSS"],
+      category: "web",
+      github: "https://github.com/suthakaranburaj/ClipVerse",
+      live: "https://clip-verse.suthakaranburaj.com"
+    },
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -150,6 +157,15 @@ const Projects = () => {
                       <IconExternalLink size={24} />
                     </motion.a>
                   </div>
+                  <Link href="/coming-soon">
+                    <motion.p
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className='mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1'
+                    >
+                      Read More <IconArrowRight size={16} />
+                    </motion.p>
+                  </Link>
                 </div>
               </motion.div>
             </motion.div>

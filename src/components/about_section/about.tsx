@@ -6,6 +6,7 @@ import { IconCode, IconRocket, IconServer } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
 import ProfilePic from "../../../assets/profile_pic2.jpeg";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   const features = [
@@ -131,13 +132,15 @@ const About = () => {
             </div>
 
             {/* CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors"
-            >
-              Learn More
-            </motion.button>
+            <Link href="https://www.linkedin.com/in/suthakar-anburaj-7bb816290/" target="_blank">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="cursor-pointer px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors"
+              >
+                Learn More
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>

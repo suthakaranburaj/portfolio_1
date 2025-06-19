@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from "next/link";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -36,7 +37,7 @@ function Hero() {
     "Software Engineer",
     "Backend Developer",
     "Frontend Developer",
-    "UI/UX Enthusiast"
+    "Entrepreneur"
   ];
 
   const leftSideIcons = [
@@ -57,7 +58,7 @@ function Hero() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
+    <div id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
@@ -315,21 +316,25 @@ function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex gap-4 pt-1 ">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
-              >
-                <IconRocket size={20} />
-                View Projects
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-colors"
-              >
-                Contact Me
-              </motion.button>
+              <Link href="#projects" scroll={true}>
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cursor-pointer px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
+                >
+                  <IconRocket size={20} />
+                  View Projects
+                </motion.button>
+              </Link>
+              <Link href="#contact" scroll={true}>
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cursor-pointer px-6 py-3 border border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-colors"
+                >
+                  Contact Me
+                </motion.button>
+              </Link>
               <a
                 href="/Suthakar_Anburaj_17_06_25.pdf"
                 target="_blank"
@@ -338,7 +343,7 @@ function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
+                  className="cursor-pointer px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
                 >
                   <IconFileCv size={20} />
                   Download CV

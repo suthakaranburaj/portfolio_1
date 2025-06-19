@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react';
+import { IconArrowRight, IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
+import Link from 'next/link';
 
 const Experience = () => {
   const experiences = [
@@ -138,6 +139,15 @@ const Experience = () => {
                         </motion.li>
                       ))}
                     </ul>
+                    <Link href="/coming-soon">
+                      <motion.p
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className='mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1'
+                      >
+                        Read More about my experience <IconArrowRight size={16} />
+                      </motion.p>
+                    </Link>
                   </motion.div>
                 </div>
               </div>

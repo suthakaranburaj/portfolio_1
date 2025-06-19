@@ -27,7 +27,7 @@ Key Features:
 • Real-time inventory updates
 • Customer reviews and ratings
 • Responsive design for all devices`,
-      image: "/projects/ecommerce.jpg",
+      image: "/clipVerse.png",
       tags: ["Next.js", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
       category: "fullstack",
       github: "https://github.com/yourusername/project1",
