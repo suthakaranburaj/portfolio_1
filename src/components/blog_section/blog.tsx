@@ -8,33 +8,27 @@ import GridBackground from '../ui/grid-background';
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Getting Started with Next.js 14",
-      excerpt: "Learn about the latest features and improvements in Next.js 14, including the new App Router and Server Components.",
-      image: "/blog/nextjs14.jpg",
-      date: "March 15, 2024",
-      readTime: "5 min read",
-      category: "Web Development",
-      link: "#"
+      title: "Don't Miss Out in 2nd Year!",
+      excerpt:
+        "I entered my second year without joining any community... and I truly regret it. This post shares my turning point, lessons from seniors, and why community can define your college experience.",
+      image: "blog_2.jpeg",
+      date: "April 2, 2024",
+      readTime: "4 min read",
+      category: "College Life",
+      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4"
     },
     {
-      title: "Mastering TypeScript for React",
-      excerpt: "A comprehensive guide to using TypeScript with React, covering type definitions, interfaces, and best practices.",
-      image: "/blog/typescript-react.jpg",
-      date: "March 10, 2024",
-      readTime: "8 min read",
-      category: "TypeScript",
-      link: "#"
-    },
-    {
-      title: "Building Scalable APIs with Node.js",
-      excerpt: "Learn how to design and implement scalable REST APIs using Node.js, Express, and MongoDB.",
-      image: "/blog/nodejs-api.jpg",
-      date: "March 5, 2024",
+      title: "My First Open Source Project",
+      excerpt:
+        "From zero web dev knowledge to launching ClipVerse, a full-stack MERN video platform. Read about my journey, features, and the lessons I learned from building it alongside a great team.",
+      image: "blog_1.png", // Tech/dev project work setup
+      date: "February 14, 2024",
       readTime: "6 min read",
-      category: "Backend",
-      link: "#"
-    }
+      category: "Open Source Project",
+      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_mern-opensource-cloudinary-activity-7255489427093819393-tfgh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4"
+    },
   ];
+
 
   return (
     <section id="blog" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
@@ -123,7 +117,8 @@ const Blog = () => {
           className="text-center mt-12"
         >
           <motion.a
-            href="/blog"
+            href="https://www.linkedin.com/in/suthakar-anburaj-7bb816290/recent-activity/all/"
+            target="_blank"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-green-400 text-black font-bold rounded-lg hover:bg-green-500 transition-colors"

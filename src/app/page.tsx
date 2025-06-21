@@ -21,7 +21,7 @@ export default function Home() {
       <Skills />
       <Hackathon />
       <Blog />
-      <YouTube />
+      {/* <YouTube /> */}
       <Contact />
       <Footer />
     </main>

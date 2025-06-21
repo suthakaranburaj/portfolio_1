@@ -2,49 +2,57 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconTrophy, IconUsers, IconCalendar, IconAward } from '@tabler/icons-react';
+import { IconTrophy, IconUsers, IconCalendar, IconAward, IconArrowRight } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
+import Link from 'next/link';
 
 const Hackathon = () => {
+  
   const hackathons = [
     {
-      title: "AI Innovation Challenge",
-      position: "1st Place",
-      date: "March 2024",
-      team: "Team Innovators",
-      description: "Developed an AI-powered solution for real-time language translation with 95% accuracy. Implemented using Python, TensorFlow, and React Native.",
+      title: "Err404 6.0",
+      position: "Participated",
+      date: "15-16 February 2025", // Update with correct date if needed
+      team: "Team InsightEd",
+      description:
+        "Built a predictive system to forecast college admissions and optimize resource planning. Integrated features for faculty recruitment, budget planning, and marketing impact analysis using AI/ML.",
       achievements: [
-        "Best Technical Implementation",
-        "Most Innovative Solution",
-        "People's Choice Award"
+        "Developed admissions prediction model",
+        "Created resource allocation tools",
+        "Selected as a finalist in our first hackathon"
       ],
-      image: "/hackathon/ai-challenge.jpg"
+      image: "/err_6_0.png"
     },
     {
-      title: "Web3 Development Hackathon",
-      position: "2nd Place",
-      date: "January 2024",
-      team: "Blockchain Pioneers",
-      description: "Created a decentralized voting system using Solidity and React. Implemented smart contracts for secure and transparent voting process.",
+      title: "Recursion 6.0",
+      position: "Top 15 Team",
+      date: "21-22 March 2025", // Update with correct date if needed
+      team: "Team BudgetGuard",
+      description:
+        "Created a personal finance assistant that detects anomalies, forecasts expenses, and sends smart alerts. Included ML-based transaction categorization, secure banking API integration, and real-time dashboards.",
       achievements: [
-        "Best Smart Contract Implementation",
-        "Most Scalable Solution"
+        "ML-based anomaly detection in transactions",
+        "Smart alerts and budget forecasting",
+        "Top 15 finalist out of competitive entries"
       ],
-      image: "/hackathon/web3-hack.jpg"
+      image: "/recursion_6_0.png"
     },
     {
-      title: "Sustainability Tech Challenge",
-      position: "3rd Place",
-      date: "November 2023",
-      team: "Green Tech Warriors",
-      description: "Built a carbon footprint tracking application using Next.js and MongoDB. Integrated with IoT devices for real-time environmental data collection.",
+      title: "Code Crafters 2.0",
+      position: "Top 7 Team",
+      date: "15-16 March 2025",
+      team: "Team InvestoMate",
+      description:
+        "Developed an investment portal to manage stocks, bonds, and insurance using the MVC pattern. Users can get investment suggestions, estimate profits, buy/sell assets, and manage account balances.",
       achievements: [
-        "Best Environmental Impact",
-        "Most User-Friendly Solution"
+        "Implemented complete asset management system",
+        "Followed MVC architecture throughout",
+        "Ranked in Top 7 among 100+ teams"
       ],
-      image: "/hackathon/sustainability.jpg"
-    }
+      image: "/code_crafters2_0.png"
+    },
   ];
+
 
   return (
     <section id="hackathon" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
@@ -131,6 +139,15 @@ const Hackathon = () => {
                       </motion.div>
                     ))}
                   </div>
+                    <Link href="/coming-soon">
+                      <motion.p
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className='mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1'
+                      >
+                        Read More <IconArrowRight size={16} />
+                      </motion.p>
+                    </Link>
                 </div>
               </motion.div>
             </motion.article>
