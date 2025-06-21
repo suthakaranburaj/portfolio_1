@@ -21,7 +21,7 @@ const Blog = () => {
       title: "My First Open Source Project",
       excerpt:
         "From zero web dev knowledge to launching ClipVerse, a full-stack MERN video platform. Read about my journey, features, and the lessons I learned from building it alongside a great team.",
-      image: "blog_1.png", // Tech/dev project work setup
+      image: "blog_1.png",
       date: "February 14, 2024",
       readTime: "6 min read",
       category: "Open Source Project",

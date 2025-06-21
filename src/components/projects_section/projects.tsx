@@ -9,49 +9,79 @@ import Link from 'next/link';
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const filters = ['all', 'web', 'mobile', 'fullstack'];
+  const filters = ['all', 'fullstack', 'fullstack + aiml'];
 
   const projects = [
     {
-      title: "Pradha",
-      description: `Developed Pradha, a client-focused website using Next.js, MongoDB, Tailwind, Shadcn, and JavaScript for modern UI.
-      Implemented Redux for efficient state management and Redis for high-performance caching and data access.
-      Collaborated with the team to ensure seamless functionality, scalability, and a smooth user experience.`,
-      image: "/PradhaFrontend.png",
-      tags: ["MongoDB", "Next.js", "Shadcn","Tailwind","Redux","Redis","Javascript","Cloudinary"],
-      category: "web",
-      github: "https://github.com/suthakaranburaj/project_1_main",
-      live: "https://pradha-frontend.vercel.app/"
+      title: "BudgetGuard - Recursion 6.0",
+      description: `Built a smart budget assistant that categorizes transactions, detects anomalies, forecasts expenses, and alerts users before they exceed budgets and spending control.
+Integrated ML models to enable personalized financial tracking, insightful trend analysis, and real-time decision-making support through a secure and user-friendly interface.`,
+      image: "/project_1.png",
+      tags: ["ML", "Django", "MUI", "Node.js", "Postgres", "Hackathon","React.js","Express.js","Javascript"],
+      category: "fullstack + aiml",
+      github: "", // Add if available
+      live: "" // Add if available
     },
     {
-      title: "Pradha Dashboard",
-      description: `Created an admin dashboard for Pradha to enable real-time management of products, users, and content.
-      Built with Next.js, Tailwind, and Shadcn, ensuring a clean, responsive, and intuitive interface.
-      Focused on delivering a smooth admin experience with efficient workflows and easy content control.`,
-      image: "/pradhaDashboard.png",
-      tags: ["Next.js", "Node.js","MongoDB","Tailwind","Shadcn","Javascript","Cloudinary"],
-      category: "web",
-      github: "https://github.com/suthakaranburaj/pradha_dashboard",
-      live: "https://pradha-dashboard.vercel.app"
-    },
-    {
-      title: "ClipVerse",
-      description: `Developed a YouTube-inspired platform using React, Node.js, Express, MongoDB, and Zustand with secure JWT authentication.
-      Implemented video upload, edit, delete, likes, comments, subscriptions, playlists, and tweet-like interactions.
-      Integrated Cloudinary for efficient video and thumbnail storage to enhance media management.`,
-      image: "/clipVerse.png",
-      tags: ["React", "Node.js", "MongoDB", "Zustand", "Cloudinary","Express","JWT","SCSS"],
-      category: "web",
-      github: "https://github.com/suthakaranburaj/ClipVerse",
-      live: "https://clip-verse.suthakaranburaj.com"
-    },
-  ];
+    title: "InvestoMate - Code Crafters 2.0",
+    description: `Created an investment portal to manage stocks, bonds, and insurance with features like investment suggestions, profit estimation, asset transactions, and balance tracking.
+The project was built using the MVC architecture to ensure modular, scalable, and maintainable code throughout the application.`,
+    image: "/project_2.png",
+    tags: ["MUI", "Node.js", "Express", "Postgres", "JavaScript", "Finance", "Hackathon","React.js","Express.js"],
+    category: "fullstack + aiml",
+    github: "", // Add if available
+    live: "" // Add if available
+  },
+  {
+    title: "Pradha",
+    description: `Developed Pradha, a client-focused website using Next.js, MongoDB, Tailwind, Shadcn, and JavaScript for modern UI.
+    Implemented Redux for efficient state management and Redis for high-performance caching and data access.
+    Collaborated with the team to ensure seamless functionality, scalability, and a smooth user experience.`,
+    image: "/PradhaFrontend.png",
+    tags: ["MongoDB", "Next.js", "Shadcn","Tailwind","Redux","Redis","Javascript","Cloudinary"],
+    category: "fullstack",
+    github: "https://github.com/suthakaranburaj/project_1_main",
+    live: "https://pradha-frontend.vercel.app/"
+  },
+  {
+    title: "Pradha Dashboard",
+    description: `Created an admin dashboard for Pradha to enable real-time management of products, users, and content.
+    Built with Next.js, Tailwind, and Shadcn, ensuring a clean, responsive, and intuitive interface.
+    Focused on delivering a smooth admin experience with efficient workflows and easy content control.`,
+    image: "/pradhaDashboard.png",
+    tags: ["Next.js", "Node.js","MongoDB","Tailwind","Shadcn","Javascript","Cloudinary"],
+    category: "fullstack",
+    github: "https://github.com/suthakaranburaj/pradha_dashboard",
+    live: "https://pradha-dashboard.vercel.app"
+  },
+  {
+    title: "ClipVerse",
+    description: `Developed a YouTube-inspired platform using React, Node.js, Express, MongoDB, and Zustand with secure JWT authentication.
+    Implemented video upload, edit, delete, likes, comments, subscriptions, playlists, and tweet-like interactions.
+    Integrated Cloudinary for efficient video and thumbnail storage to enhance media management.`,
+    image: "/clipVerse.png",
+    tags: ["React", "Node.js", "MongoDB", "Zustand", "Cloudinary","Express","JWT","SCSS"],
+    category: "fullstack",
+    github: "https://github.com/suthakaranburaj/ClipVerse",
+    live: "https://clip-verse.suthakaranburaj.com"
+  },
+  {
+    title: "InsightEd - Err404 6.0",
+    description: `Worked on a data-driven solution for college admission prediction and resource planning using AI/ML techniques and statistical analysis.
+Implemented predictive models and scenario-based simulations to help institutions allocate teaching staff, infrastructure, and financial resources more efficiently and plan ahead for upcoming academic sessions.`,
+    image: "/project_3.png",
+    tags: ["AI/ML", "Python", "Pandas", "React.js", "Hackathon", "Express.js", "MongoDB","Flask","Node.js","JavaScript"],
+    category: "fullstack + aiml",
+    github: "https://github.com/suthakaranburaj/CoreX_Err6.0",
+    live: "" // Add if available
+  },
+];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+const filteredProjects = activeFilter === 'all' 
+? projects 
+: projects.filter(project => project.category === activeFilter);
 
-  return (
+return (
     <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">

@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { IconCode, IconRocket, IconServer } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
-import ProfilePic from "../../../assets/profile_pic2.jpeg";
+import ProfilePic from "../../../public/about_main.png";
 import Image from "next/image";
 import Link from "next/link";
 
