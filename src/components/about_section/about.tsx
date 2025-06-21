@@ -102,7 +102,7 @@ const About = () => {
             </p>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}

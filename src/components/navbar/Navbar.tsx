@@ -24,7 +24,7 @@ const Navbar = () => {
     { name: "Skills", href: "#skills" },
     { name: "Hackathon", href: "#hackathon" },
     { name: "Blog", href: "#blog" },
-    { name: "YouTube", href: "#youtube" },
+    // { name: "YouTube", href: "#youtube" },
     { name: "Contact", href: "#contact" }
   ];
 

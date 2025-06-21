@@ -155,7 +155,7 @@ function Hero() {
               >
                 Welcome to my portfolio
               </motion.div>
-              <h1 className="text-4xl md:text-6xl font-bold">
+              <h1 className="text-3xl md:text-6xl font-bold">
                 Hi, I&apos;m{" "}
                 <span className="text-green-400">Suthakar Anburaj</span>
               </h1>
@@ -174,7 +174,7 @@ function Hero() {
             </div>
 
             <div className="space-y-4">
-              <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
+              <p className="text-gray-400  md:text-lg max-w-2xl leading-relaxed">
                 I&apos;m always the first to take on complex and unique problems.
                 I believe every challenge teaches us something valuable. I
                 specialize in developing highly complex backend and frontend
@@ -241,7 +241,7 @@ function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-4 pt-2 ">
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -272,7 +272,7 @@ function Hero() {
               >
                 <IconBrandX size={24} />
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://www.youtube.com/@SuthakarAnburaj"
@@ -281,7 +281,7 @@ function Hero() {
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <IconBrandYoutube size={24} />
-              </motion.a>
+              </motion.a> */}
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -315,41 +315,51 @@ function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex gap-4 pt-1 ">
-              <Link href="#projects" scroll={true}>
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="cursor-pointer px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
+            <div className="flex flex-col lg:flex-row gap-4 pt-1">
+              <div className="flex-1">
+                <Link href="#projects" scroll={true}>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full cursor-pointer py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <IconRocket size={20} />
+                    View Projects
+                  </motion.button>
+                </Link>
+              </div>
+
+              <div className="flex-1">
+                <Link href="#contact" scroll={true}>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full cursor-pointer py-3 border border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-colors"
+                  >
+                    Contact Me
+                  </motion.button>
+                </Link>
+              </div>
+
+              <div className="flex-1">
+                <a
+                  href="/Suthakar_Anburaj_17_06_25.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <IconRocket size={20} />
-                  View Projects
-                </motion.button>
-              </Link>
-              <Link href="#contact" scroll={true}>
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="cursor-pointer px-6 py-3 border border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-colors"
-                >
-                  Contact Me
-                </motion.button>
-              </Link>
-              <a
-                href="/Suthakar_Anburaj_17_06_25.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="cursor-pointer px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center gap-2"
-                >
-                  <IconFileCv size={20} />
-                  Download CV
-                </motion.button>
-              </a>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full cursor-pointer py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <IconFileCv size={20} />
+                    Download CV
+                  </motion.button>
+                </a>
+              </div>
             </div>
+
+
           </motion.div>
         </div>
       </div>
