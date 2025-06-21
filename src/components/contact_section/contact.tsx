@@ -139,7 +139,7 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full px-6 py-3 bg-green-400 text-black font-bold rounded-lg hover:bg-green-500 transition-colors"
+                className="w-full px-6 py-3 bg-green-400 text-black font-bold rounded-lg hover:bg-green-500 transition-colors cursor-pointer"
               >
                 Send Message
               </motion.button>
@@ -163,7 +163,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02, y: -2 }}
-                    className="flex items-center gap-4 text-gray-300 hover:text-green-400 transition-colors"
+                    className="flex items-center gap-4 text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
                   >
                     <div className="text-green-400">{info.icon}</div>
                     <div>
@@ -185,7 +185,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="text-gray-300 hover:text-green-400 transition-colors"
+                    className="text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
                   >
                     {social.icon}
                   </motion.a>

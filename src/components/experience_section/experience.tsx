@@ -139,7 +139,7 @@ const Experience = () => {
                         </motion.li>
                       ))}
                     </ul>
-                    <Link href="/coming-soon">
+                    <Link href={`/experience/${index + 1}`}>
                       <motion.p
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

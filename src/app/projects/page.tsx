@@ -114,7 +114,7 @@ Key Features:
             <motion.button
               whileHover={{ scale: 1.05, x: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+              className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors cursor-pointer"
             >
               <IconArrowLeft size={20} />
               Back to Home
@@ -141,7 +141,7 @@ Key Features:
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-lg capitalize flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg capitalize flex items-center gap-2 cursor-pointer ${
                 activeFilter === filter
                   ? 'bg-green-400 text-black'
                   : 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'
@@ -238,7 +238,7 @@ Key Features:
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-green-400/10 text-green-400 rounded-lg hover:bg-green-400/20 transition-colors"
+                      className="flex items-center gap-2 px-4 py-2 bg-green-400/10 text-green-400 rounded-lg hover:bg-green-400/20 transition-colors cursor-pointer"
                     >
                       <IconBrandGithub size={20} />
                       View Code
@@ -249,7 +249,7 @@ Key Features:
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-green-400 text-black rounded-lg hover:bg-green-500 transition-colors"
+                      className="flex items-center gap-2 px-4 py-2 bg-green-400 text-black rounded-lg hover:bg-green-500 transition-colors cursor-pointer"
                     >
                       <IconExternalLink size={20} />
                       Live Demo

@@ -112,7 +112,7 @@ Impact:
             <motion.button
               whileHover={{ scale: 1.05, x: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+              className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors cursor-pointer"
             >
               <IconArrowLeft size={20} />
               Back to Home
@@ -139,7 +139,7 @@ Impact:
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-lg capitalize flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg capitalize flex items-center gap-2 cursor-pointer ${
                 activeFilter === filter
                   ? 'bg-green-400 text-black'
                   : 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'

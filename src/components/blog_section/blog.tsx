@@ -12,7 +12,7 @@ const Blog = () => {
       excerpt:
         "I entered my second year without joining any community... and I truly regret it. This post shares my turning point, lessons from seniors, and why community can define your college experience.",
       image: "blog_2.jpeg",
-      date: "April 2, 2024",
+      date: "June 19, 2024",
       readTime: "4 min read",
       category: "College Life",
       link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4"
@@ -22,7 +22,7 @@ const Blog = () => {
       excerpt:
         "From zero web dev knowledge to launching ClipVerse, a full-stack MERN video platform. Read about my journey, features, and the lessons I learned from building it alongside a great team.",
       image: "blog_1.png",
-      date: "February 14, 2024",
+      date: "October, 2024",
       readTime: "6 min read",
       category: "Open Source Project",
       link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_mern-opensource-cloudinary-activity-7255489427093819393-tfgh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4"
@@ -99,7 +99,7 @@ const Blog = () => {
                   <motion.a
                     href={post.link}
                     whileHover={{ x: 5 }}
-                    className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+                    className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors cursor-pointer"
                   >
                     Read More
                     <IconArrowRight size={20} />
@@ -121,7 +121,7 @@ const Blog = () => {
             target="_blank"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-400 text-black font-bold rounded-lg hover:bg-green-500 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-400 text-black font-bold rounded-lg hover:bg-green-500 transition-colors cursor-pointer"
           >
             View All Posts
             <IconArrowRight size={20} />

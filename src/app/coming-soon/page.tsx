@@ -97,7 +97,7 @@ export default function ComingSoon() {
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.96 }}
-            className="px-8 py-3 bg-gradient-to-r from-green-400 to-blue-400 text-black font-bold rounded-xl shadow-lg hover:from-green-300 hover:to-blue-300 transition-all duration-300 text-lg mt-2"
+            className="px-8 py-3 bg-gradient-to-r from-green-400 to-blue-400 text-black font-bold rounded-xl shadow-lg hover:from-green-300 hover:to-blue-300 transition-all duration-300 text-lg mt-2 cursor-pointer"
           >
             Back to Home
           </motion.button>

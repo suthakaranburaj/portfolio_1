@@ -172,7 +172,7 @@ return (
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-green-400 transition-colors"
+                      className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
                     >
                       <IconBrandGithub size={24} />
                     </motion.a>
@@ -182,12 +182,13 @@ return (
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-green-400 transition-colors"
+                      className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
                     >
                       <IconExternalLink size={24} />
                     </motion.a>
                   </div>
-                  <Link href="/coming-soon">
+                  
+                  <Link href={`/projects/${index + 1}`}>
                     <motion.p
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

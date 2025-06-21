@@ -62,7 +62,7 @@ const YouTube = () => {
                 href={video.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block"
+                className="block cursor-pointer"
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <div className="bg-green-400/5 rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors">

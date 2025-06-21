@@ -43,7 +43,7 @@ const Navbar = () => {
             href="#home"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-2xl font-bold text-green-400"
+            className="text-2xl font-bold text-green-400 cursor-pointer"
           >
             Suthakar Anburaj
           </motion.a>
@@ -56,7 +56,7 @@ const Navbar = () => {
                 href={link.href}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
               >
                 {link.name}
               </motion.a>
@@ -68,7 +68,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-300 hover:text-green-400 transition-colors"
+            className="md:hidden text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
           >
             {isOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
           </motion.button>
@@ -89,7 +89,7 @@ const Navbar = () => {
                   href={link.href}
                   whileHover={{ x: 10 }}
                   onClick={() => setIsOpen(false)}
-                  className="block text-gray-300 hover:text-green-400 transition-colors"
+                  className="block text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
                 >
                   {link.name}
                 </motion.a>

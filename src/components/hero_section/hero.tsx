@@ -248,7 +248,7 @@ function Hero() {
                 href="https://github.com/suthakaranburaj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
               >
                 <IconBrandGithub size={24} />
               </motion.a>
@@ -258,7 +258,7 @@ function Hero() {
                 href="https://www.linkedin.com/in/suthakar-anburaj-7bb816290/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
               >
                 <IconBrandLinkedin size={24} />
               </motion.a>
@@ -268,7 +268,7 @@ function Hero() {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
               >
                 <IconBrandX size={24} />
               </motion.a>
@@ -288,7 +288,7 @@ function Hero() {
                 href="https://leetcode.com/u/suthakaranburaj/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
               >
                 <IconBrandLeetcode size={24} />
               </motion.a>
@@ -298,7 +298,7 @@ function Hero() {
                 href="https://www.geeksforgeeks.org/user/suthakaranburaj/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
               >
                 <SiGeeksforgeeks size={24} />
               </motion.a>
@@ -308,14 +308,14 @@ function Hero() {
                 href="https://www.codechef.com/users/suthakaranbu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
               >
                 <SiCodechef size={24} />
               </motion.a>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col lg:flex-row gap-4 pt-1">
+            <div className="flex flex-col sm:flex-row gap-4 pt-8">
               <div className="flex-1">
                 <Link href="#projects" scroll={true}>
                   <motion.button

@@ -87,7 +87,7 @@ Major Achievements:
             <motion.button
               whileHover={{ scale: 1.05, x: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+              className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors cursor-pointer"
             >
               <IconArrowLeft size={20} />
               Back to Home

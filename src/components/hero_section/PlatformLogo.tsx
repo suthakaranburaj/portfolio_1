@@ -61,7 +61,7 @@ const PlatformLogo = () => {
               // whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="flex items-center justify-center p-3 rounded-full transition-all duration-300 hover:shadow-lg"
+              className="flex items-center justify-center p-3 rounded-full transition-all duration-300 hover:shadow-lg cursor-pointer"
               style={{
                 backgroundColor: `${platform.color}20`,
                 color: platform.color,

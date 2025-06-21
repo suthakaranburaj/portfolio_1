@@ -66,7 +66,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="text-gray-400 hover:text-green-400 transition-colors"
+                  className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -86,7 +86,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.url}
-                    className="text-gray-300 hover:text-green-400 transition-colors"
+                    className="text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
                   >
                     {link.name}
                   </a>
