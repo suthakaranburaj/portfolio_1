@@ -24,52 +24,49 @@ const Skills = () => {
       title: "Frontend Development",
       skills: [
         { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 85 },
         { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
         { name: "Vue.js", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "Bootstrap", level: 80 },
-        { name: "Material UI", level: 80 },
         { name: "Shadcn UI", level: 90 },
-      ]
+        { name: "TypeScript", level: 85 },
+        { name: "Next.js", level: 85 },
+        { name: "Tailwind CSS", level: 85 },
+        { name: "Material UI", level: 80 },
+      ],
     },
     {
       title: "Backend Development",
       skills: [
         { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Python", level: 65 },
-        { name: "MongoDB", level: 80 },
-        { name: "PostgreSQL", level: 75 },
         { name: "REST APIs", level: 85 },
         { name: "Prisma", level: 85 },
         { name: "Redis", level: 85 },
         { name: "MySQL", level: 85 },
-        // { name: "", level: 80 },
-      ]
+        { name: "MongoDB", level: 80 },
+        { name: "Express", level: 80 },
+        { name: "Python", level: 75 },
+      ],
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "AWS", level: 70 },
-        { name: "Git", level: 85 },
         { name: "VS Code", level: 95 },
         { name: "Cursor", level: 95 },
+        { name: "Git", level: 85 },
+        { name: "AWS", level: 70 },
         { name: "Linux", level: 70 },
         { name: "Notion", level: 70 },
         { name: "Asana", level: 70 },
         { name: "Figma", level: 70 },
-        { name: "Canva", level: 70 },
-        // { name: "Framer", level: 70 },
-        // { name: "", level: 70 },
-
-      ]
-    }
+      ],
+    },
   ];
+  
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section
+      id="skills"
+      className="py-20 bg-gradient-to-b from-black to-gray-900 relative"
+    >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -136,20 +133,37 @@ const Skills = () => {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               "Responsive Design",
-              "UI/UX Design",
               "Agile Methodologies",
               "Problem Solving",
               "Team Collaboration",
               "Technical Writing",
               "Performance Optimization",
-              "Security Best Practices"
+              "Security Best Practices",
+              "Entrepreneurship",
+              "Product Thinking",
+              "User-Centered Design",
+              "Critical Thinking",
+              "Rapid Prototyping",
+              "Time Management",
+              "Adaptability",
+              "Growth Mindset",
+              "Code Review & Mentorship",
+              "Open Source Contribution",
+              "Leadership & Initiative",
+              "Project Management",
+              "Communication Skills",
+              "Decision Making Under Pressure",
+              "Innovation & Creativity",
+              "Client Communication",
+              "Business Acumen",
+              "Market Research Understanding",
             ].map((skill, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
                 className="px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-sm"
               >
                 {skill}
