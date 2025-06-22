@@ -6,7 +6,7 @@ import Projects from '@/components/projects_section/projects';
 import Skills from '@/components/skills_section/skills';
 import Hackathon from '@/components/hackathon_section/hackathon';
 import Blog from '@/components/blog_section/blog';
-import YouTube from '@/components/youtube_section/youtube';
+// import YouTube from '@/components/youtube_section/youtube';
 import Contact from '@/components/contact_section/contact';
 import Footer from '@/components/footer/footer';
 

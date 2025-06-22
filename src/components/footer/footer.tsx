@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube, IconMail } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 
 const Footer = () => {
