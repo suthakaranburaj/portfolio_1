@@ -15,7 +15,7 @@ const Blog = () => {
       date: "June 19, 2025",
       readTime: "4 min read",
       category: "College Life",
-      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4"
+      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
     },
     {
       title: "My First Open Source Project",
@@ -25,7 +25,17 @@ const Blog = () => {
       date: "October, 2024",
       readTime: "3 min read",
       category: "Open Source Project",
-      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_mern-opensource-cloudinary-activity-7255489427093819393-tfgh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4"
+      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_mern-opensource-cloudinary-activity-7255489427093819393-tfgh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
+    },
+    {
+      title: "Why Your Online Presence Matters",
+      excerpt:
+        "In today’s digital-first world, your portfolio and social presence aren’t optional—they’re essential. Here's why sharing your journey, no matter how small, builds your brand and helps others too.",
+      image: "blog_3.webp",
+      date: "June 22, 2025",
+      readTime: "4 min read",
+      category: "Personal Branding",
+      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-a-tech-enthusiast-developer-or-activity-7342425496158105600-zbJD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
     },
   ];
 
