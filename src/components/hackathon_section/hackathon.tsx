@@ -13,7 +13,7 @@ const Hackathon = () => {
       title: "Err404 6.0",
       position: "Participated",
       date: "15-16 February 2025", // Update with correct date if needed
-      team: "Team InsightEd",
+      team: "Team CoreX",
       description:
         "Built a predictive system to forecast college admissions and optimize resource planning. Integrated features for faculty recruitment, budget planning, and marketing impact analysis using AI/ML.",
       achievements: [
@@ -27,7 +27,7 @@ const Hackathon = () => {
       title: "Recursion 6.0",
       position: "Top 15 Team",
       date: "21-22 March 2025", // Update with correct date if needed
-      team: "Team BudgetGuard",
+      team: "Team CoreX",
       description:
         "Created a personal finance assistant that detects anomalies, forecasts expenses, and sends smart alerts. Included ML-based transaction categorization, secure banking API integration, and real-time dashboards.",
       achievements: [
@@ -41,7 +41,7 @@ const Hackathon = () => {
       title: "Code Crafters 2.0",
       position: "Top 7 Team",
       date: "15-16 March 2025",
-      team: "Team InvestoMate",
+      team: "Team CoreX",
       description:
         "Developed an investment portal to manage stocks, bonds, and insurance using the MVC pattern. Users can get investment suggestions, estimate profits, buy/sell assets, and manage account balances.",
       achievements: [
