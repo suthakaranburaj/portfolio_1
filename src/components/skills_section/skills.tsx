@@ -1,66 +1,97 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
-import GridBackground from '../ui/grid-background';
-// import {
-//   IconBrandJavascript,
-//   IconBrandReact,
-//   IconBrandNextjs,
-//   IconBrandNodejs,
-//   IconBrandTypescript,
-//   IconBrandMongodb,
-//   IconBrandPython,
-//   IconBrandAws,
-//   IconBrandDocker,
-//   IconBrandGit,
-//   IconBrandTailwind,
-//   IconBrandFigma
-// } from '@tabler/icons-react';
+import React from "react";
+import { motion } from "framer-motion";
+import GridBackground from "../ui/grid-background";
+import {
+  IconBrandJavascript,
+  IconBrandReact,
+  IconBrandNextjs,
+  IconBrandNodejs,
+  IconBrandTypescript,
+  IconBrandMongodb,
+  IconBrandPython,
+  IconBrandAws,
+  IconBrandDocker,
+  IconBrandGit,
+  IconBrandTailwind,
+  IconBrandFigma,
+  IconBrandVue,
+  IconBrandRedux,
+  IconBrandFirebase,
+  IconBrandVercel,
+  IconBrandPrisma,
+  IconBrandMysql,
+  IconBrandVscode,
+} from "@tabler/icons-react";
 
 const Skills = () => {
+  // Skill icon mapping
+  const skillIcons = {
+    JavaScript: IconBrandJavascript,
+    React: IconBrandReact,
+    "Vue.js": IconBrandVue,
+    TypeScript: IconBrandTypescript,
+    "Next.js": IconBrandNextjs,
+    "Tailwind CSS": IconBrandTailwind,
+    "Node.js": IconBrandNodejs,
+    Prisma: IconBrandPrisma,
+    Redis: IconBrandRedux,
+    MySQL: IconBrandMysql,
+    MongoDB: IconBrandMongodb,
+    Python: IconBrandPython,
+    AWS: IconBrandAws,
+    Git: IconBrandGit,
+    Figma: IconBrandFigma,
+    Redux: IconBrandRedux,
+    Firebase: IconBrandFirebase,
+    Vercel: IconBrandVercel,
+    "Shadcn UI": IconBrandReact, 
+    "REST APIs": IconBrandNodejs,
+    "Express.js": IconBrandNodejs,
+    "VS Code": IconBrandVscode,
+    Cursor: IconBrandVscode,
+    Linux: IconBrandDocker,
+    Notion: IconBrandFigma,
+    Asana: IconBrandFigma,
+  };
+
   const skillCategories = [
     {
       title: "Frontend Development",
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "React", level: 90 },
-        { name: "Vue.js", level: 90 },
-        { name: "Shadcn UI", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "Material UI", level: 80 },
+        "JavaScript",
+        "React",
+        "Vue.js",
+        "Shadcn UI",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Redux",
       ],
     },
     {
       title: "Backend Development",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "REST APIs", level: 85 },
-        { name: "Prisma", level: 85 },
-        { name: "Redis", level: 85 },
-        { name: "MySQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "Express", level: 80 },
-        { name: "Python", level: 75 },
+        "Node.js",
+        "REST APIs",
+        "Prisma",
+        "Redis",
+        "MySQL",
+        "MongoDB",
+        "Express.js",
       ],
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "VS Code", level: 95 },
-        { name: "Cursor", level: 95 },
-        { name: "Git", level: 85 },
-        { name: "AWS", level: 70 },
-        { name: "Linux", level: 70 },
-        { name: "Notion", level: 70 },
-        { name: "Asana", level: 70 },
-        { name: "Figma", level: 70 },
+        "VS Code",
+        "Git",
+        "AWS",
+        "Vercel",
       ],
     },
   ];
-  
 
   return (
     <section
@@ -93,28 +124,29 @@ const Skills = () => {
               <h3 className="text-xl font-bold text-green-400 mb-6">
                 {category.title}
               </h3>
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
-                  >
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-green-400">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        className="h-full bg-green-400"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                {category.skills.map((skill, skillIndex) => {
+                  const Icon = skillIcons[skill] || null;
+                  return (
+                    <motion.div
+                      key={skillIndex}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
+                      className="flex flex-col items-center justify-center"
+                    >
+                      {Icon && (
+                        <div className="w-12 h-12 rounded-full bg-green-400/10 flex items-center justify-center mb-2">
+                          <Icon className="w-6 h-6 text-green-400" />
+                        </div>
+                      )}
+                      <span className="text-xs sm:text-sm text-center text-gray-300">
+                        {skill}
+                      </span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
@@ -130,13 +162,11 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-center text-green-400 mb-8">
             Additional Skills
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {[
-              "Responsive Design",
               "Agile Methodologies",
               "Problem Solving",
               "Team Collaboration",
-              "Technical Writing",
               "Performance Optimization",
               "Security Best Practices",
               "Entrepreneurship",
@@ -152,19 +182,19 @@ const Skills = () => {
               "Leadership & Initiative",
               "Project Management",
               "Communication Skills",
-              "Decision Making Under Pressure",
+              "Decision Making",
               "Innovation & Creativity",
               "Client Communication",
               "Business Acumen",
-              "Market Research Understanding",
+              "Market Research",
             ].map((skill, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                className="px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-sm"
+                transition={{ duration: 0.3, delay: index * 0.02 }}
+                className="px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-xs sm:text-sm"
               >
                 {skill}
               </motion.span>
@@ -176,4 +206,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;
