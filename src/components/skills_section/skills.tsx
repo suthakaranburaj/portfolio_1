@@ -24,39 +24,41 @@ import {
   IconBrandMysql,
   IconBrandVscode,
 } from "@tabler/icons-react";
-
+// Define proper type for skill icons
+type IconComponentType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 interface SkillIcons {
-  [key: string]: any;
+  [key: string]: IconComponentType | undefined;
 }
+
 const Skills = () => {
   // Typed skill icon mapping
   const skillIcons: SkillIcons = {
-    JavaScript: IconBrandJavascript,
-    React: IconBrandReact,
-    "Vue.js": IconBrandVue,
-    TypeScript: IconBrandTypescript,
-    "Next.js": IconBrandNextjs,
-    "Tailwind CSS": IconBrandTailwind,
-    "Node.js": IconBrandNodejs,
-    Prisma: IconBrandPrisma,
-    Redis: IconBrandRedux,
-    MySQL: IconBrandMysql,
-    MongoDB: IconBrandMongodb,
-    Python: IconBrandPython,
-    AWS: IconBrandAws,
-    Git: IconBrandGit,
-    Figma: IconBrandFigma,
-    Redux: IconBrandRedux,
-    Firebase: IconBrandFirebase,
-    Vercel: IconBrandVercel,
-    "Shadcn UI": IconBrandReact, 
-    "REST APIs": IconBrandNodejs,
-    "Express.js": IconBrandNodejs,
-    "VS Code": IconBrandVscode,
-    Cursor: IconBrandVscode,
-    Linux: IconBrandDocker,
-    Notion: IconBrandFigma,
-    Asana: IconBrandFigma,
+    JavaScript: IconBrandJavascript as IconComponentType,
+    React: IconBrandReact as IconComponentType,
+    "Vue.js": IconBrandVue as IconComponentType,
+    TypeScript: IconBrandTypescript as IconComponentType,
+    "Next.js": IconBrandNextjs as IconComponentType,
+    "Tailwind CSS": IconBrandTailwind as IconComponentType,
+    "Node.js": IconBrandNodejs as IconComponentType,
+    Prisma: IconBrandPrisma as IconComponentType,
+    Redis: IconBrandRedux as IconComponentType,
+    MySQL: IconBrandMysql as IconComponentType,
+    MongoDB: IconBrandMongodb as IconComponentType,
+    Python: IconBrandPython as IconComponentType,
+    AWS: IconBrandAws as IconComponentType,
+    Git: IconBrandGit as IconComponentType,
+    Figma: IconBrandFigma as IconComponentType,
+    Redux: IconBrandRedux as IconComponentType,
+    Firebase: IconBrandFirebase as IconComponentType,
+    Vercel: IconBrandVercel as IconComponentType,
+    "Shadcn UI": IconBrandReact as IconComponentType, 
+    "REST APIs": IconBrandNodejs as IconComponentType,
+    "Express.js": IconBrandNodejs as IconComponentType,
+    "VS Code": IconBrandVscode as IconComponentType,
+    Cursor: IconBrandVscode as IconComponentType,
+    Linux: IconBrandDocker as IconComponentType,
+    Notion: IconBrandFigma as IconComponentType,
+    Asana: IconBrandFigma as IconComponentType,
   };
 
   const skillCategories = [
