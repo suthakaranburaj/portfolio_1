@@ -25,9 +25,12 @@ import {
   IconBrandVscode,
 } from "@tabler/icons-react";
 
+interface SkillIcons {
+  [key: string]: any;
+}
 const Skills = () => {
-  // Skill icon mapping
-  const skillIcons:any = {
+  // Typed skill icon mapping
+  const skillIcons: SkillIcons = {
     JavaScript: IconBrandJavascript,
     React: IconBrandReact,
     "Vue.js": IconBrandVue,
