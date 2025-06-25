@@ -27,7 +27,7 @@ import {
 
 const Skills = () => {
   // Skill icon mapping
-  const skillIcons = {
+  const skillIcons:any = {
     JavaScript: IconBrandJavascript,
     React: IconBrandReact,
     "Vue.js": IconBrandVue,
