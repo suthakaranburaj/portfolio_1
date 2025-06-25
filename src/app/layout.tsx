@@ -23,9 +23,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html style={{overflowX: 'hidden'}} lang="en">
+    <html style={{ overflowX: "hidden" }} lang="en">
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Suthakar Anburaj",
+              url: "https://suthakaranburaj.com",
+              image: "https://suthakaranburaj.com/logo.png",
+              jobTitle: "Full Stack Developer",
+              sameAs: [
+                "https://github.com/suthakaranburaj",
+                "https://linkedin.com/in/suthakaranburaj",
+              ],
+              description:
+                "I'm always the first to take on complex and unique problems, driven by a mindset that thrives on challenge and innovation.",
+            }),
+          }}
+        />
       </head>
 
       <body
