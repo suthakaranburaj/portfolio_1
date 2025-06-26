@@ -272,7 +272,7 @@ function Hero() {
               >
                 <IconBrandX size={24} />
               </motion.a>
-              {/* <motion.a
+              <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://www.youtube.com/@SuthakarAnburaj"
@@ -281,7 +281,7 @@ function Hero() {
                 className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <IconBrandYoutube size={24} />
-              </motion.a> */}
+              </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}

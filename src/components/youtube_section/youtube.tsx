@@ -8,29 +8,31 @@ import GridBackground from '../ui/grid-background';
 const YouTube = () => {
   const videos = [
     {
-      title: "Building a Full-Stack App with Next.js and MongoDB",
-      thumbnail: "/youtube/nextjs-mongodb.jpg",
-      views: "12K",
-      date: "2 weeks ago",
-      duration: "45:30",
-      link: "#"
+      title:
+        "GitHub for Beginners: 5 Things Every Fresher Developer Should Know (2025)",
+      thumbnail: "/video_1.png",
+      // views: "244",
+      // date: "2 weeks ago",
+      duration: "7:40",
+      link: "https://youtu.be/FD6YHSIcZIo?si=m5asZBqbf-d-J2a1",
     },
     {
-      title: "TypeScript Tips and Tricks for React Developers",
-      thumbnail: "/youtube/typescript-tips.jpg",
-      views: "8.5K",
-      date: "1 month ago",
-      duration: "32:15",
-      link: "#"
+      title: "How to Set Up a Next.js Project in 2025 (Beginner Friendly)",
+      thumbnail: "/video_2.png",
+      // views: "100",
+      // date: "1 month ago",
+      duration: "3:40",
+      link: "https://youtu.be/0omo_DigYSU?si=KfQMC-S2FuiG12uI",
     },
     {
-      title: "Mastering CSS Grid and Flexbox",
-      thumbnail: "/youtube/css-grid.jpg",
-      views: "15K",
-      date: "2 months ago",
-      duration: "38:45",
-      link: "#"
-    }
+      title:
+        "How to Host HTML CSS Website on Vercel for FREE (Beginner Friendly)",
+      thumbnail: "/video_3.png",
+      // views: "71",
+      // date: "2 months ago",
+      duration: "5:22",
+      link: "https://youtu.be/9SnzgEssFiE?si=_AfbV5fNht0o3ij7",
+    },
   ];
 
   return (
@@ -97,14 +99,14 @@ const YouTube = () => {
                       {video.title}
                     </h3>
                     <div className="flex items-center gap-4 text-sm text-gray-400">
-                      <div className="flex items-center gap-1">
+                      {/* <div className="flex items-center gap-1">
                         <IconEye size={16} />
                         <span>{video.views} views</span>
-                      </div>
-                      <div className="flex items-center gap-1">
+                      </div> */}
+                      {/* <div className="flex items-center gap-1">
                         <IconCalendar size={16} />
                         <span>{video.date}</span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -120,7 +122,7 @@ const YouTube = () => {
           className="text-center mt-12"
         >
           <motion.a
-            href="https://youtube.com/@yourchannel"
+            href="https://youtube.com/@suthakaranburaj"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05, y: -2 }}

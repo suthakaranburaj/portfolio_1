@@ -2,7 +2,13 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail } from '@tabler/icons-react';
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconMail,
+  IconBrandYoutube,
+} from "@tabler/icons-react";
 import GridBackground from '../ui/grid-background';
 
 const Footer = () => {
@@ -24,11 +30,11 @@ const Footer = () => {
       name: "Twitter",
       url: "https://twitter.com"
     },
-    // {
-    //   icon: <IconBrandYoutube size={24} />,
-    //   name: "YouTube",
-    //   url: "https://youtube.com/@SuthakarAnburaj"
-    // },
+    {
+      icon: <IconBrandYoutube size={24} />,
+      name: "YouTube",
+      url: "https://youtube.com/@SuthakarAnburaj"
+    },
     {
       icon: <IconMail size={24} />,
       name: "Email",
@@ -43,7 +49,7 @@ const Footer = () => {
     { name: "Projects", url: "#projects" },
     { name: "Skills", url: "#skills" },
     { name: "Blog", url: "#blog" },
-    // { name: "YouTube", url: "#youtube" },
+    { name: "YouTube", url: "#youtube" },
     { name: "Contact", url: "#contact" }
   ];
 
