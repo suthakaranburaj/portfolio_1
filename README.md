@@ -186,7 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - **Name**: Suthakar Anburaj
-- **Email**: suthakaranburaj@gmail.com
+- **Email**: suthakaranburaj03@gmail.com
 - **LinkedIn**: [linkedin.com/in/suthakaranburaj](https://linkedin.com/in/suthakaranburaj)
 - **GitHub**: [github.com/suthakaranburaj](https://github.com/suthakaranburaj)
 - **Portfolio**: [suthakaranburaj.com](https://suthakaranburaj.com)

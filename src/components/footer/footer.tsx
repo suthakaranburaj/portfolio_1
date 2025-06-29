@@ -38,7 +38,7 @@ const Footer = () => {
     {
       icon: <IconMail size={24} />,
       name: "Email",
-      url: "mailto:suthakaranburaj@gmail.com"
+      url: "mailto:suthakaranburaj03@gmail.com"
     }
   ];
 
@@ -105,7 +105,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-green-400 mb-4">Contact Info</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: suthakaranburaj@gmail.com</li>
+              <li>Email: suthakaranburaj03@gmail.com</li>
               <li>Location: Mumbai, Maharashtra, India</li>
               <li>Phone: +91 9321607843</li>
             </ul>

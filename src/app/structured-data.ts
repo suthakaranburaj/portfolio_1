@@ -12,7 +12,7 @@ export const generateStructuredData = () => {
         image: `${baseUrl}/logo.png`,
         jobTitle: "Full Stack Developer",
         description: "I'm always the first to take on complex and unique problems, driven by a mindset that thrives on challenge and innovation.",
-        email: "mailto:suthakaranburaj@gmail.com",
+        email: "mailto:suthakaranburaj03@gmail.com",
         telephone: "+91-1234567890",
         address: {
           "@type": "PostalAddress",
