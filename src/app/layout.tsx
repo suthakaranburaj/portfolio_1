@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { generateStructuredData } from "./structured-data";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -93,6 +95,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = generateStructuredData();
+
   return (
     <html style={{ overflowX: "hidden" }} lang="en">
       <head>
@@ -102,63 +106,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        {/* Structured Data */}
+        {/* Comprehensive Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Suthakar Anburaj",
-              url: "https://suthakaranburaj.com",
-              image: "https://suthakaranburaj.com/logo.png",
-              jobTitle: "Full Stack Developer",
-              description: "I'm always the first to take on complex and unique problems, driven by a mindset that thrives on challenge and innovation.",
-              email: "mailto:suthakaranburaj@gmail.com",
-              telephone: "+91-1234567890",
-              address: {
-                "@type": "PostalAddress",
-                "addressCountry": "India"
-              },
-              sameAs: [
-                "https://github.com/suthakaranburaj",
-                "https://linkedin.com/in/suthakaranburaj",
-                "https://twitter.com/suthakaranburaj",
-                "https://instagram.com/suthakaranburaj"
-              ],
-              knowsAbout: [
-                "Full Stack Development",
-                "React.js",
-                "Next.js",
-                "Node.js",
-                "JavaScript",
-                "TypeScript",
-                "Web Development",
-                "Software Engineering"
-              ],
-              alumniOf: {
-                "@type": "Organization",
-                "name": "Your University Name"
-              }
-            }),
-          }}
-        />
-        
-        {/* Website Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Suthakar Anburaj Portfolio",
-              url: "https://suthakaranburaj.com",
-              description: "Full Stack Developer and Software Engineer Portfolio",
-              author: {
-                "@type": "Person",
-                name: "Suthakar Anburaj"
-              }
-            }),
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>
@@ -167,6 +119,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   );
