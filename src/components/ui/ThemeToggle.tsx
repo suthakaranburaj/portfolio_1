@@ -13,11 +13,23 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="relative w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-blue-500 p-0.5 shadow-lg hover:shadow-xl transition-all duration-300"
+      className={`cursor-pointer relative w-12 h-12 rounded-full p-0.5 shadow-lg hover:shadow-xl transition-all duration-300 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-r from-gray-700 to-gray-800' 
+          : 'bg-gradient-to-r from-green-400 to-blue-500'
+      }`}
     >
-      <div className="relative w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center overflow-hidden">
+      <div className={`relative w-full h-full rounded-full flex items-center justify-center overflow-hidden ${
+        theme === 'dark' 
+          ? 'bg-gray-800' 
+          : 'bg-white'
+      }`}>
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-blue-500/20 dark:from-green-400/10 dark:to-blue-500/10" />
+        <div className={`absolute inset-0 ${
+          theme === 'dark'
+            ? 'bg-gradient-to-r from-gray-700/20 to-gray-800/20'
+            : 'bg-gradient-to-r from-green-400/20 to-blue-500/20'
+        }`} />
         
         {/* Icons */}
         <motion.div
@@ -36,12 +48,12 @@ const ThemeToggle = () => {
           {theme === 'dark' ? (
             <IconMoon 
               size={20} 
-              className="text-gray-700 dark:text-yellow-300 transition-colors duration-300" 
+              className="text-yellow-300 transition-colors duration-300" 
             />
           ) : (
             <IconSun 
               size={20} 
-              className="text-yellow-500 dark:text-gray-300 transition-colors duration-300" 
+              className="text-yellow-500 transition-colors duration-300" 
             />
           )}
         </motion.div>
@@ -50,11 +62,15 @@ const ThemeToggle = () => {
         <motion.div
           initial={false}
           animate={{
-            opacity: theme === 'dark' ? 0.3 : 0.6,
+            opacity: theme === 'dark' ? 0.4 : 0.6,
             scale: theme === 'dark' ? 0.8 : 1.2,
           }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/30 to-orange-500/30 dark:from-blue-400/20 dark:to-purple-500/20 blur-sm"
+          className={`absolute inset-0 rounded-full blur-sm ${
+            theme === 'dark'
+              ? 'bg-gradient-to-r from-yellow-400/30 to-orange-500/30'
+              : 'bg-gradient-to-r from-green-400/30 to-blue-500/30'
+          }`}
         />
 
         {/* Ripple effect on click */}
@@ -62,7 +78,9 @@ const ThemeToggle = () => {
           initial={{ scale: 0, opacity: 0 }}
           whileTap={{ scale: 2, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 rounded-full bg-white/20"
+          className={`absolute inset-0 rounded-full ${
+            theme === 'dark' ? 'bg-yellow-400/20' : 'bg-green-400/20'
+          }`}
         />
       </div>
 
@@ -70,7 +88,11 @@ const ThemeToggle = () => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileHover={{ opacity: 1, y: 0 }}
-        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 text-xs rounded-md whitespace-nowrap pointer-events-none"
+        className={`absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs rounded-md whitespace-nowrap pointer-events-none ${
+          theme === 'dark'
+            ? 'bg-gray-700 text-gray-200 border border-gray-600'
+            : 'bg-white text-gray-800 border border-gray-200 shadow-lg'
+        }`}
       >
         {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
       </motion.div>

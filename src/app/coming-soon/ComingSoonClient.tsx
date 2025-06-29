@@ -1,6 +1,5 @@
 "use client";
 
-import GridBackground from '@/components/ui/grid-background';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
@@ -40,8 +39,16 @@ const ComingSoonClient = () => {
   const { theme } = useTheme();
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white flex items-center justify-center relative overflow-hidden font-geist-sans transition-colors duration-300">
-      <GridBackground />
+    <main className={`min-h-screen flex items-center justify-center relative overflow-hidden font-geist-sans transition-colors duration-300 ${
+      theme === 'dark'
+        ? 'bg-black text-gray-900'
+        : 'bg-white text-gray-900' 
+    }`}>
+      <div className={`absolute inset-0 transition-colors duration-300 ${
+        theme === 'dark'
+          ? 'bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]'
+          : 'bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:14px_24px]'
+      }`}></div>
 
       {/* Glowing Blobs */}
       <div className="absolute inset-0">
