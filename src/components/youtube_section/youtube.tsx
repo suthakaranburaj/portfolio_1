@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconBrandYoutube, IconEye, IconCalendar } from '@tabler/icons-react';
+import { IconBrandYoutube } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 
 const YouTube = () => {
