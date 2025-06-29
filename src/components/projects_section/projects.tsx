@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { IconArrowRight, IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 import Link from 'next/link';
 import { useTheme } from '@/context/ThemeContext';
