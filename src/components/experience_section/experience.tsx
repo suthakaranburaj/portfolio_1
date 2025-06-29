@@ -5,8 +5,11 @@ import { motion } from 'motion/react';
 import { IconArrowRight, IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 import Link from 'next/link';
+import { useTheme } from '@/context/ThemeContext';
 
 const Experience = () => {
+  const { theme } = useTheme();
+  
   const experiences = [
     {
       title: "Junior Software Developer",
@@ -48,7 +51,11 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
+    <section id="experience" className={`py-20 relative transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-gray-900 to-black' 
+        : 'bg-gradient-to-b from-gray-100 to-gray-100'
+    }`}>
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -57,7 +64,9 @@ const Experience = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             Work <span className="text-green-400">Experience</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -110,24 +119,32 @@ const Experience = () => {
                     whileHover={{ scale: 1.02, y: -5 }}
                   >
                     <h3 className="text-xl font-bold text-green-400 mb-2">{exp.title}</h3>
-                    <div className="flex flex-wrap gap-4 text-gray-400 mb-4">
+                    <div className="flex flex-wrap gap-4 mb-4">
                       <motion.div 
-                        className="flex items-center gap-2"
+                        className={`flex items-center gap-2 ${
+                          theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                        }`}
                         whileHover={{ scale: 1.05 }}
                       >
                         <IconCalendar size={16} />
                         <span>{exp.period}</span>
                       </motion.div>
                       <motion.div 
-                        className="flex items-center gap-2"
+                        className={`flex items-center gap-2 ${
+                          theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                        }`}
                         whileHover={{ scale: 1.05 }}
                       >
                         <IconMapPin size={16} />
                         <span>{exp.location}</span>
                       </motion.div>
                     </div>
-                    <h4 className="text-lg font-semibold mb-3">{exp.company}</h4>
-                    <ul className="list-disc list-inside space-y-2 text-gray-300">
+                    <h4 className={`text-lg font-semibold mb-3 ${
+                      theme === 'dark' ? 'text-white' : 'text-gray-900'
+                    }`}>{exp.company}</h4>
+                    <ul className={`list-disc list-inside space-y-2 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       {exp.description.map((item, idx) => (
                         <motion.li 
                           key={idx}

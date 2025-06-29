@@ -4,8 +4,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { IconBrandYoutube } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
+import { useTheme } from '@/context/ThemeContext';
 
 const YouTube = () => {
+  const { theme } = useTheme();
+  
   const videos = [
     {
       title:
@@ -36,7 +39,11 @@ const YouTube = () => {
   ];
 
   return (
-    <section id="youtube" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section id="youtube" className={`py-20 relative transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-black to-gray-900' 
+        : 'bg-gradient-to-b from-white to-gray-100'
+    }`}>
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -45,7 +52,9 @@ const YouTube = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             Latest <span className="text-green-400">Videos</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -98,7 +107,9 @@ const YouTube = () => {
                     <h3 className="text-xl font-bold text-green-400 mb-3 group-hover:text-green-300 transition-colors">
                       {video.title}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className={`flex items-center gap-4 text-sm ${
+                      theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                    }`}>
                       {/* <div className="flex items-center gap-1">
                         <IconEye size={16} />
                         <span>{video.views} views</span>

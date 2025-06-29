@@ -29,9 +29,12 @@ import { motion } from 'motion/react';
 import ProfilePic from '../../../assets/profile_pic.jpeg'
 // import MyResume from   '../../../public/Suthakar_Anburaj_15_06_25.pdf'
 import { SiGeeksforgeeks, SiCodechef } from "react-icons/si";
+import { useTheme } from '@/context/ThemeContext';
 
 
 function Hero() {
+  const { theme } = useTheme();
+  
   const roles = [
     "Full Stack Developer",
     "Software Engineer",
@@ -58,9 +61,17 @@ function Hero() {
   ];
 
   return (
-    <div id="home" className="pt-10 min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
+    <div id="home" className={`pt-10 min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-black to-gray-900 text-white' 
+        : 'bg-gradient-to-b from-white to-gray-100 text-gray-900'
+    }`}>
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className={`absolute inset-0 transition-colors duration-300 ${
+        theme === 'dark'
+          ? 'bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]'
+          : 'bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:14px_24px]'
+      }`}></div>
 
       {/* Decorative Elements */}
       <div className="absolute inset-0">
@@ -161,7 +172,9 @@ function Hero() {
               </h1>
             </div>
 
-            <div className="h-12 text-2xl md:text-3xl text-gray-300">
+            <div className={`h-12 text-2xl md:text-3xl ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}>
               <Typewriter
                 options={{
                   strings: roles,
@@ -174,7 +187,9 @@ function Hero() {
             </div>
 
             <div className="space-y-4">
-              <p className="text-gray-400  md:text-lg max-w-2xl leading-relaxed">
+              <p className={`md:text-lg max-w-2xl leading-relaxed ${
+                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+              }`}>
                 I&apos;m always the first to take on complex and unique problems.
                 I believe every challenge teaches us something valuable. I
                 specialize in developing highly complex backend and frontend
@@ -189,14 +204,18 @@ function Hero() {
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">1+</div>
-                  <div className="text-sm text-gray-400">Years Experience</div>
+                  <div className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>Years Experience</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">16+</div>
-                  <div className="text-sm text-gray-400">
+                  <div className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
                     Projects Completed
                   </div>
                 </motion.div>
@@ -205,161 +224,112 @@ function Hero() {
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">5+</div>
-                  <div className="text-sm text-gray-400">Happy Clients</div>
+                  <div className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>Technologies</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
-                  <div className="text-2xl font-bold text-green-400">5+</div>
-                  <div className="text-sm text-gray-400">Technologies</div>
+                  <div className="text-2xl font-bold text-green-400">100%</div>
+                  <div className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>Client Satisfaction</div>
                 </motion.div>
               </div>
-            </div>
 
-            {/* Tech Stack Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {[
-                "React",
-                "Next.js",
-                "Node.js",
-                "TypeScript",
-                "Python",
-                "MongoDB",
-                "AWS",
-                "Vue.js",
-                "Prisma",
-              ].map((tech) => (
-                <motion.span
-                  key={tech}
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <motion.button
                   whileHover={{ scale: 1.05 }}
-                  className="px-3 py-1 bg-green-400/10 text-green-400 rounded-full text-sm font-medium"
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-gradient-to-r from-green-400 to-blue-500 text-black font-bold rounded-xl shadow-lg hover:from-green-300 hover:to-blue-300 transition-all duration-300"
                 >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-4 pt-2 ">
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://github.com/suthakaranburaj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
-              >
-                <IconBrandGithub size={24} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://www.linkedin.com/in/suthakar-anburaj-7bb816290/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
-              >
-                <IconBrandLinkedin size={24} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
-              >
-                <IconBrandX size={24} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://www.youtube.com/@SuthakarAnburaj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
-              >
-                <IconBrandYoutube size={24} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://leetcode.com/u/suthakaranburaj/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
-              >
-                <IconBrandLeetcode size={24} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://www.geeksforgeeks.org/user/suthakaranburaj/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
-              >
-                <SiGeeksforgeeks size={24} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://www.codechef.com/users/suthakaranbu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
-              >
-                <SiCodechef size={24} />
-              </motion.a>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <div className="flex-1">
-                <Link href="#projects" scroll={true}>
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full cursor-pointer py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center justify-center gap-2"
-                  >
+                  <Link href="#contact" className="flex items-center justify-center gap-2">
                     <IconRocket size={20} />
-                    View Projects
-                  </motion.button>
-                </Link>
-              </div>
+                    Get In Touch
+                  </Link>
+                </motion.button>
 
-              <div className="flex-1">
-                <Link href="#contact" scroll={true}>
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full cursor-pointer py-3 border border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-colors"
-                  >
-                    Contact Me
-                  </motion.button>
-                </Link>
-              </div>
-
-              <div className="flex-1">
-                <a
-                  href="/Suthakar_Anburaj_17_06_25.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-8 py-3 border-2 border-green-400 font-bold rounded-xl transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'text-white hover:bg-green-400 hover:text-black'
+                      : 'text-gray-900 hover:bg-green-400 hover:text-black'
+                  }`}
                 >
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full cursor-pointer py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors flex items-center justify-center gap-2"
-                  >
+                  <Link href="/public/Suthakar_Anburaj_15_06_25.pdf" className="flex items-center justify-center gap-2">
                     <IconFileCv size={20} />
                     Download CV
-                  </motion.button>
-                </a>
+                  </Link>
+                </motion.button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex items-center gap-4 pt-4">
+                <motion.a
+                  href="https://github.com/suthakaranburaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`p-3 rounded-full transition-colors duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  <IconBrandGithub size={24} />
+                </motion.a>
+
+                <motion.a
+                  href="https://linkedin.com/in/suthakaranburaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
+                >
+                  <IconBrandLinkedin size={24} />
+                </motion.a>
+
+                <motion.a
+                  href="https://leetcode.com/suthakaranburaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white transition-colors duration-300"
+                >
+                  <IconBrandLeetcode size={24} />
+                </motion.a>
+
+                <motion.a
+                  href="https://www.geeksforgeeks.org/user/suthakaranburaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 rounded-full bg-green-600 hover:bg-green-700 text-white transition-colors duration-300"
+                >
+                  <SiGeeksforgeeks size={24} />
+                </motion.a>
+
+                <motion.a
+                  href="https://www.codechef.com/users/suthakaranburaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 rounded-full bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-300"
+                >
+                  <SiCodechef size={24} />
+                </motion.a>
               </div>
             </div>
-
-
           </motion.div>
         </div>
       </div>

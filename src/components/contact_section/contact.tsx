@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail, IconPhone, IconMapPin } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
+import { useTheme } from '@/context/ThemeContext';
 
 const Contact = () => {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,7 +68,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section id="contact" className={`py-20 relative transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-black to-gray-900' 
+        : 'bg-gradient-to-b from-white to-gray-100'
+    }`}>
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -75,7 +81,9 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             Get In <span className="text-green-400">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -98,7 +106,9 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 text-gray-300"
+                  className={`w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
+                  } placeholder-gray-500`}
                   required
                 />
               </div>
@@ -109,7 +119,9 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className="w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 text-gray-300"
+                  className={`w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
+                  } placeholder-gray-500`}
                   required
                 />
               </div>
@@ -120,7 +132,9 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="Subject"
-                  className="w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 text-gray-300"
+                  className={`w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
+                  } placeholder-gray-500`}
                   required
                 />
               </div>
@@ -131,7 +145,9 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your Message"
                   rows={5}
-                  className="w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 text-gray-300 resize-none"
+                  className={`w-full px-4 py-3 bg-green-400/10 border border-green-400/20 rounded-lg focus:outline-none focus:border-green-400 resize-none ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
+                  } placeholder-gray-500`}
                   required
                 ></textarea>
               </div>
@@ -163,7 +179,9 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02, y: -2 }}
-                    className="flex items-center gap-4 text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
+                    className={`flex items-center gap-4 hover:text-green-400 transition-colors cursor-pointer ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}
                   >
                     <div className="text-green-400">{info.icon}</div>
                     <div>
@@ -185,7 +203,9 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="text-gray-300 hover:text-green-400 transition-colors cursor-pointer"
+                    className={`hover:text-green-400 transition-colors cursor-pointer ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}
                   >
                     {social.icon}
                   </motion.a>

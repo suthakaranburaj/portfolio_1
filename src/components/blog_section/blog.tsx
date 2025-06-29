@@ -4,8 +4,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { IconCalendar, IconClock, IconArrowRight } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
+import { useTheme } from '@/context/ThemeContext';
 
 const Blog = () => {
+  const { theme } = useTheme();
+  
   const blogPosts = [
     {
       title: "Don't Miss Out in 2nd Year!",
@@ -30,7 +33,7 @@ const Blog = () => {
     {
       title: "Why Your Online Presence Matters",
       excerpt:
-        "In today’s digital-first world, your portfolio and social presence aren’t optional—they’re essential. Here's why sharing your journey, no matter how small, builds your brand and helps others too.",
+        "In today's digital-first world, your portfolio and social presence aren't optional—they're essential. Here's why sharing your journey, no matter how small, builds your brand and helps others too.",
       image: "blog_3.webp",
       date: "June 22, 2025",
       readTime: "4 min read",
@@ -41,7 +44,11 @@ const Blog = () => {
 
 
   return (
-    <section id="blog" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section id="blog" className={`py-20 relative transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-black to-gray-900' 
+        : 'bg-gradient-to-b from-white to-gray-100'
+    }`}>
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -50,7 +57,9 @@ const Blog = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             Latest <span className="text-green-400">Blog Posts</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -88,7 +97,9 @@ const Blog = () => {
 
                 {/* Blog Content */}
                 <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                  <div className={`flex items-center gap-4 text-sm mb-4 ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                  }`}>
                     <div className="flex items-center gap-1">
                       <IconCalendar size={16} />
                       <span>{post.date}</span>
@@ -102,7 +113,9 @@ const Blog = () => {
                   <h3 className="text-xl font-bold text-green-400 mb-3 group-hover:text-green-300 transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">
+                  <p className={`mb-4 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     {post.excerpt}
                   </p>
 

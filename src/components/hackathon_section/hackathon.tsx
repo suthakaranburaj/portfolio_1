@@ -5,8 +5,10 @@ import { motion } from 'motion/react';
 import { IconTrophy, IconUsers, IconCalendar, IconAward, IconArrowRight } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 import Link from 'next/link';
+import { useTheme } from '@/context/ThemeContext';
 
 const Hackathon = () => {
+  const { theme } = useTheme();
   
   const hackathons = [
     {
@@ -55,7 +57,11 @@ const Hackathon = () => {
 
 
   return (
-    <section id="hackathon" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section id="hackathon" className={`py-20 relative transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-black to-gray-900' 
+        : 'bg-gradient-to-b from-white to-gray-100'
+    }`}>
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -64,7 +70,9 @@ const Hackathon = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             Hackathon <span className="text-green-400">Achievements</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -110,7 +118,9 @@ const Hackathon = () => {
                     {hackathon.title}
                   </h3>
 
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-4">
+                  <div className={`flex flex-wrap gap-4 text-sm mb-4 ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
+                  }`}>
                     <div className="flex items-center gap-1">
                       <IconCalendar size={16} />
                       <span>{hackathon.date}</span>
@@ -121,7 +131,9 @@ const Hackathon = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-300 mb-4">
+                  <p className={`mb-4 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     {hackathon.description}
                   </p>
 
@@ -132,7 +144,9 @@ const Hackathon = () => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: idx * 0.1 }}
-                        className="flex items-center gap-2 text-gray-300"
+                        className={`flex items-center gap-2 ${
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                        }`}
                       >
                         <IconAward size={16} className="text-green-400" />
                         <span>{achievement}</span>

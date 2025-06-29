@@ -24,6 +24,8 @@ import {
   IconBrandMysql,
   IconBrandVscode,
 } from "@tabler/icons-react";
+import { useTheme } from '@/context/ThemeContext';
+
 // Define proper type for skill icons
 type IconComponentType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 interface SkillIcons {
@@ -31,6 +33,8 @@ interface SkillIcons {
 }
 
 const Skills = () => {
+  const { theme } = useTheme();
+  
   // Typed skill icon mapping
   const skillIcons: SkillIcons = {
     JavaScript: IconBrandJavascript as IconComponentType,
@@ -101,7 +105,11 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-b from-black to-gray-900 relative"
+      className={`py-20 relative transition-colors duration-300 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-b from-black to-gray-900' 
+          : 'bg-gradient-to-b from-white to-gray-100'
+      }`}
     >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
@@ -111,7 +119,9 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             My <span className="text-green-400">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -146,7 +156,9 @@ const Skills = () => {
                           <Icon className="w-6 h-6 text-green-400" />
                         </div>
                       )}
-                      <span className="text-xs sm:text-sm text-center text-gray-300">
+                      <span className={`text-xs sm:text-sm text-center ${
+                        theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
                         {skill}
                       </span>
                     </motion.div>
@@ -199,7 +211,9 @@ const Skills = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 transition={{ duration: 0.3, delay: index * 0.02 }}
-                className="px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-xs sm:text-sm"
+                className={`px-3 py-2 bg-green-400/10 text-green-400 rounded-full text-sm font-medium ${
+                  theme === 'dark' ? 'hover:bg-green-400/20' : 'hover:bg-green-400/20'
+                }`}
               >
                 {skill}
               </motion.span>

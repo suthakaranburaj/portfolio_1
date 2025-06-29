@@ -7,8 +7,11 @@ import GridBackground from "../ui/grid-background";
 import ProfilePic from "../../../public/about_main.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from '@/context/ThemeContext';
 
 const About = () => {
+  const { theme } = useTheme();
+  
   const features = [
     {
       icon: <IconCode size={32} />,
@@ -33,7 +36,11 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-b from-black to-gray-900 relative"
+      className={`py-20 relative transition-colors duration-300 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-b from-black to-gray-900' 
+          : 'bg-gradient-to-b from-white to-gray-100'
+      }`}
     >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
@@ -43,7 +50,9 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             About <span className="text-green-400">Me</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -82,7 +91,9 @@ const About = () => {
             <h3 className="text-2xl font-bold text-green-400">
               Full Stack Developer
             </h3>
-            <p className="text-gray-300 leading-relaxed">
+            <p className={`leading-relaxed ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}>
               I&apos;m always the first to take on complex and unique problems,
               driven by a mindset that thrives on challenge and innovation. I
               believe that every problem, no matter how tough, brings an
@@ -91,7 +102,9 @@ const About = () => {
               impact.
             </p>
 
-            <p className="text-gray-300 leading-relaxed">
+            <p className={`leading-relaxed ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}>
               I specialize in building and optimizing high-complexity backend
               and frontend functionalities for modern web applications. With a
               strong foundation in both design and development, I turn intricate
@@ -123,10 +136,14 @@ const About = () => {
                   >
                     {feature.icon}
                   </motion.div>
-                  <h4 className="text-lg font-semibold mb-2">
+                  <h4 className={`text-lg font-semibold mb-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-900'
+                  }`}>
                     {feature.title}
                   </h4>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                  <p className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>{feature.description}</p>
                 </motion.div>
               ))}
             </div>

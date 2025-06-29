@@ -5,8 +5,10 @@ import { motion } from 'motion/react';
 import { IconArrowRight, IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 import Link from 'next/link';
+import { useTheme } from '@/context/ThemeContext';
 
 const Projects = () => {
+  const { theme } = useTheme();
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = ['all', 'fullstack', 'fullstack + aiml'];
@@ -139,7 +141,11 @@ const filteredProjects = activeFilter === 'all'
 : projects.filter(project => project.category === activeFilter);
 
 return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
+    <section id="projects" className={`py-20 relative transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-black to-gray-900' 
+        : 'bg-gradient-to-b from-white to-gray-100'
+    }`}>
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -148,7 +154,9 @@ return (
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>
             My <span className="text-green-400">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
@@ -165,7 +173,9 @@ return (
               className={`px-4 py-2 rounded-lg capitalize ${
                 activeFilter === filter
                   ? 'bg-green-400 text-black'
-                  : 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'
+                  : `bg-green-400/10 hover:bg-green-400/20 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`
               }`}
             >
               {filter}
@@ -201,59 +211,50 @@ return (
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-green-400 mb-2">
+                  <h3 className={`text-xl font-bold mb-3 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-900'
+                  }`}>
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">
+                  <p className={`text-sm mb-4 leading-relaxed ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     {project.description}
                   </p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, idx) => (
-                      <motion.span
-                        key={idx}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        className="px-3 py-1 bg-green-400/10 text-green-400 rounded-full text-sm"
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-2 py-1 bg-green-400/10 text-green-400 text-xs rounded-full"
                       >
                         {tag}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
 
-                  {/* Links */}
-                  <div className="flex gap-4">
-                    <motion.a
+                  {/* Project Links */}
+                  <div className="flex gap-3">
+                    <Link
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
+                      className="flex items-center gap-2 px-4 py-2 bg-green-400/10 hover:bg-green-400/20 text-green-400 rounded-lg transition-colors"
                     >
-                      <IconBrandGithub size={24} />
-                    </motion.a>
-                    <motion.a
+                      <IconBrandGithub size={16} />
+                      Code
+                    </Link>
+                    <Link
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
+                      className="flex items-center gap-2 px-4 py-2 bg-green-400 text-black hover:bg-green-500 rounded-lg transition-colors"
                     >
-                      <IconExternalLink size={24} />
-                    </motion.a>
+                      <IconExternalLink size={16} />
+                      Live
+                    </Link>
                   </div>
-                  
-                  <Link href={`/projects/${index + 1}`}>
-                    <motion.p
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className='mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1'
-                    >
-                      Read More <IconArrowRight size={16} />
-                    </motion.p>
-                  </Link>
                 </div>
               </motion.div>
             </motion.div>
