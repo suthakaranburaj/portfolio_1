@@ -17,6 +17,7 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import PlatformLogo from '@/components/hero_section/PlatformLogo';
+import { useTheme } from '@/context/ThemeContext';
 
 const leftSideIcons = [
   { icon: <IconBrandJavascript size={40} />, position: "top-1/8 left-1/4", color: "text-yellow-400" },
@@ -36,8 +37,10 @@ const rightSideIcons = [
 ];
 
 const ComingSoonClient = () => {
+  const { theme } = useTheme();
+
   return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center relative overflow-hidden font-geist-sans">
+    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white flex items-center justify-center relative overflow-hidden font-geist-sans transition-colors duration-300">
       <GridBackground />
 
       {/* Glowing Blobs */}
@@ -70,7 +73,11 @@ const ComingSoonClient = () => {
       </div>
 
       {/* Main Card */}
-      <div className="relative z-10 flex flex-col items-center gap-8 px-8 py-12 md:px-14 md:py-16 bg-black/20 rounded-3xl shadow-[0_0_30px_rgba(34,197,94,0.25)] border border-green-400 max-w-xl w-full">
+      <div className={`relative z-10 flex flex-col items-center gap-8 px-8 py-12 md:px-14 md:py-16 rounded-3xl shadow-[0_0_30px_rgba(34,197,94,0.25)] border border-green-400 max-w-xl w-full transition-colors duration-300 ${
+        theme === 'dark' 
+          ? 'bg-black/20' 
+          : 'bg-white/20'
+      }`}>
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,7 +90,9 @@ const ComingSoonClient = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-base md:text-xl text-gray-300 text-center max-w-lg font-medium leading-relaxed"
+          className={`text-base md:text-xl text-center max-w-lg font-medium leading-relaxed ${
+            theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+          }`}
         >
           This feature is currently in the works. <br />
           Stay tuned for something <span className="text-green-300 font-semibold">awesome</span>!

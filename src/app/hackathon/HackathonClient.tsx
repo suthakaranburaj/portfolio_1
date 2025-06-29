@@ -5,9 +5,11 @@ import { motion } from 'motion/react';
 import { IconArrowLeft, IconTrophy, IconUsers, IconCalendar, IconFilter } from '@tabler/icons-react';
 import Link from 'next/link';
 import GridBackground from '@/components/ui/grid-background';
+import { useTheme } from '@/context/ThemeContext';
 
 const HackathonClient = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const { theme } = useTheme();
 
   const filters = ['all', 'web3', 'ai', 'mobile', 'social'];
 
@@ -144,7 +146,7 @@ Impact:
     : hackathons.filter(hackathon => hackathon.category === activeFilter);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       <GridBackground />
       <div className="container mx-auto px-4 py-20 relative z-10">
         {/* Header */}
@@ -183,7 +185,9 @@ Impact:
               className={`px-4 py-2 rounded-lg capitalize flex items-center gap-2 cursor-pointer ${
                 activeFilter === filter
                   ? 'bg-green-400 text-black'
-                  : 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'
+                  : theme === 'dark'
+                    ? 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'
+                    : 'bg-green-400/10 text-gray-700 hover:bg-green-400/20'
               }`}
             >
               <IconFilter size={16} />
@@ -203,7 +207,9 @@ Impact:
               className="group"
             >
               <motion.div 
-                className="bg-green-400/5 rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors"
+                className={`rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors ${
+                  theme === 'dark' ? 'bg-green-400/5' : 'bg-green-400/5'
+                }`}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 {/* Hackathon Image */}
@@ -229,18 +235,24 @@ Impact:
                   </h3>
 
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2 text-gray-300">
+                    <div className={`flex items-center gap-2 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       <IconUsers size={20} />
                       <span>{hackathon.team}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-300">
+                    <div className={`flex items-center gap-2 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       <IconCalendar size={20} />
                       <span>{hackathon.date}</span>
                     </div>
                   </div>
                   
                   <div className="prose prose-invert max-w-none">
-                    <p className="text-gray-300 mb-6">
+                    <p className={`mb-6 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       {hackathon.description}
                     </p>
 
@@ -264,7 +276,9 @@ Impact:
                       <h4 className="text-lg font-semibold text-green-400 mb-3">Achievements</h4>
                       <ul className="space-y-2">
                         {hackathon.achievements.map((achievement, idx) => (
-                          <li key={idx} className="text-gray-300 flex items-start gap-2">
+                          <li key={idx} className={`flex items-start gap-2 ${
+                            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                          }`}>
                             <span className="text-green-400 mt-1">•</span>
                             {achievement}
                           </li>

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { generateStructuredData } from "./structured-data";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -98,7 +99,7 @@ export default function RootLayout({
   const structuredData = generateStructuredData();
 
   return (
-    <html style={{ overflowX: "hidden" }} lang="en">
+    <html style={{ overflowX: "hidden" }} lang="en" className="dark">
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
@@ -116,10 +117,12 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300`}
       >
-        {children}
-        <GoogleAnalytics />
+        <ThemeProvider>
+          {children}
+          <GoogleAnalytics />
+        </ThemeProvider>
       </body>
     </html>
   );

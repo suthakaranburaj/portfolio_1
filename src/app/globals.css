@@ -24,6 +24,50 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Light theme (default) */
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #f8fafc;
+  --color-tertiary: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-card: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #374151;
+  --color-text-tertiary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-accent: #00ccb1;
+  --color-accent-secondary: #7b61ff;
+  --color-accent-tertiary: #ffc414;
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-info: #2563eb;
+}
+
+/* Dark theme */
+.dark {
+  --color-primary: #000000;
+  --color-secondary: #0a0a0a;
+  --color-tertiary: #1a1a1a;
+  --color-surface: #1f1f1f;
+  --color-card: #2a2a2a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e5e5e5;
+  --color-text-tertiary: #a0a0a0;
+  --color-text-muted: #6b7280;
+  --color-accent: #00ccb1;
+  --color-accent-secondary: #7b61ff;
+  --color-accent-tertiary: #ffc414;
+  --color-border: #333333;
+  --color-border-light: #404040;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -36,7 +80,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Blob Animation */
@@ -71,20 +115,84 @@ html {
   scroll-behavior: smooth;
 }
 
-/* For Webkit browsers like Chrome/Safari */
+/* Theme-aware scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--color-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4ade80;
+  background: var(--color-accent);
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #22c55e;
+  background: var(--color-accent-secondary);
+}
+
+/* Theme transition utilities */
+.theme-transition {
+  transition: all 0.3s ease;
+}
+
+.theme-transition-colors {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom theme-aware components */
+.theme-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(0, 204, 177, 0.1);
+}
+
+.theme-text-primary {
+  color: var(--color-text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--color-text-muted);
+}
+
+.theme-bg-primary {
+  background: var(--color-primary);
+}
+
+.theme-bg-secondary {
+  background: var(--color-secondary);
+}
+
+.theme-border {
+  border-color: var(--color-border);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+::-moz-selection {
+  background: var(--color-accent);
+  color: var(--color-primary);
 }

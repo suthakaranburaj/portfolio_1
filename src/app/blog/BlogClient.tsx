@@ -5,9 +5,11 @@ import { motion } from 'motion/react';
 import { IconArrowLeft, IconCalendar, IconClock, IconFilter, IconTag } from '@tabler/icons-react';
 import Link from 'next/link';
 import GridBackground from '@/components/ui/grid-background';
+import { useTheme } from '@/context/ThemeContext';
 
 const BlogClient = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const { theme } = useTheme();
 
   const filters = ['all', 'web-development', 'ai', 'blockchain', 'career'];
 
@@ -239,7 +241,7 @@ Work-Life Balance:
     : articles.filter(article => article.category === activeFilter);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       <GridBackground />
       <div className="container mx-auto px-4 py-20 relative z-10">
         {/* Header */}
@@ -278,7 +280,9 @@ Work-Life Balance:
               className={`px-4 py-2 rounded-lg capitalize flex items-center gap-2 cursor-pointer ${
                 activeFilter === filter
                   ? 'bg-green-400 text-black'
-                  : 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'
+                  : theme === 'dark'
+                    ? 'bg-green-400/10 text-gray-300 hover:bg-green-400/20'
+                    : 'bg-green-400/10 text-gray-700 hover:bg-green-400/20'
               }`}
             >
               <IconFilter size={16} />
@@ -298,7 +302,9 @@ Work-Life Balance:
               className="group"
             >
               <motion.div 
-                className="bg-green-400/5 rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors"
+                className={`rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors ${
+                  theme === 'dark' ? 'bg-green-400/5' : 'bg-green-400/5'
+                }`}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 {/* Article Image */}
@@ -320,18 +326,24 @@ Work-Life Balance:
                   </h3>
 
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2 text-gray-300">
+                    <div className={`flex items-center gap-2 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       <IconCalendar size={20} />
                       <span>{article.date}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-300">
+                    <div className={`flex items-center gap-2 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       <IconClock size={20} />
                       <span>{article.readTime}</span>
                     </div>
                   </div>
                   
                   <div className="prose prose-invert max-w-none">
-                    <p className="text-gray-300 mb-6">
+                    <p className={`mb-6 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       {article.excerpt}
                     </p>
 
