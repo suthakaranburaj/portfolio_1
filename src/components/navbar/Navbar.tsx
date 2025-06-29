@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link, index) => (
               <motion.a
                 key={index}
@@ -84,7 +84,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden transition-colors cursor-pointer ${
+            className={`lg:hidden transition-colors cursor-pointer ${
               theme === 'dark' 
                 ? 'text-gray-300 hover:text-green-400' 
                 : 'text-gray-700 hover:text-green-600'
@@ -100,7 +100,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`md:hidden backdrop-blur-md ${
+            className={`lg:hidden backdrop-blur-md ${
               theme === 'dark' 
                 ? 'bg-black/95 border-t border-gray-800' 
                 : 'bg-white/95 border-t border-gray-200'
