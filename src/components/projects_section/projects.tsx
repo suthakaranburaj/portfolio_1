@@ -72,7 +72,7 @@ The project was built using the MVC architecture to ensure modular, scalable, an
       ],
       category: "fullstack",
       github: "https://github.com/suthakaranburaj/project_1_main",
-      live: "https://pradha-frontend.vercel.app/",
+      live: "https://pradha-frontend-main.vercel.app/",
     },
     {
       title: "Pradha Dashboard",
@@ -91,7 +91,7 @@ The project was built using the MVC architecture to ensure modular, scalable, an
       ],
       category: "fullstack",
       github: "https://github.com/suthakaranburaj/pradha_dashboard",
-      live: "https://pradha-dashboard.vercel.app",
+      live: "https://pradha-dashboard-main.vercel.app",
     },
     {
       title: "ClipVerse",
