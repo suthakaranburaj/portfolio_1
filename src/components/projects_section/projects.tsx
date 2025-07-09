@@ -1,17 +1,19 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
-import GridBackground from '../ui/grid-background';
-import Link from 'next/link';
-import { useTheme } from '@/context/ThemeContext';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
+import GridBackground from "../ui/grid-background";
+import Link from "next/link";
+import { useTheme } from "@/context/ThemeContext";
 
 const Projects = () => {
   const { theme } = useTheme();
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 3;
 
-  const filters = ['all', 'fullstack', 'fullstack + aiml'];
+  const filters = ["all", "fullstack", "fullstack + aiml"];
 
   const projects = [
     {
@@ -136,16 +138,75 @@ Implemented predictive models and scenario-based simulations to help institution
     },
   ];
 
-const filteredProjects = activeFilter === 'all' 
-? projects 
-: projects.filter(project => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
-return (
-    <section id="projects" className={`py-20 relative transition-colors duration-300 ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-b from-black to-gray-900' 
-        : 'bg-gradient-to-b from-white to-gray-100'
-    }`}>
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = filteredProjects.slice(
+    indexOfFirstProject,
+    indexOfLastProject
+  );
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeFilter]);
+
+  const renderPagination = () => {
+    const pages = [];
+    const maxVisiblePages = 5;
+
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      const half = Math.floor(maxVisiblePages / 2);
+      let start = Math.max(1, currentPage - half);
+      let end = Math.min(totalPages, currentPage + half);
+
+      if (currentPage <= half + 1) {
+        start = 1;
+        end = maxVisiblePages;
+      } else if (currentPage >= totalPages - half) {
+        start = totalPages - maxVisiblePages + 1;
+        end = totalPages;
+      }
+
+      if (start > 1) {
+        pages.push(1);
+        if (start > 2) {
+          pages.push("...");
+        }
+      }
+
+      for (let i = start; i <= end; i++) {
+        pages.push(i);
+      }
+
+      if (end < totalPages) {
+        if (end < totalPages - 1) {
+          pages.push("...");
+        }
+        pages.push(totalPages);
+      }
+    }
+
+    return pages;
+  };
+
+  return (
+    <section
+      id="projects"
+      className={`py-20 relative transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gradient-to-b from-black to-gray-900"
+          : "bg-gradient-to-b from-white to-gray-100"
+      }`}
+    >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -154,27 +215,29 @@ return (
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+          >
             My <span className="text-green-400">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
         </motion.div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {filters.map((filter) => (
             <motion.button
               key={filter}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-lg capitalize ${
+              className={`px-4 py-2 rounded-lg capitalize text-sm md:text-base ${
                 activeFilter === filter
-                  ? 'bg-green-400 text-black'
+                  ? "bg-green-400 text-black"
                   : `bg-green-400/10 hover:bg-green-400/20 ${
-                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
                     }`
               }`}
             >
@@ -185,7 +248,7 @@ return (
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -193,8 +256,8 @@ return (
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <motion.div 
-                className="relative rounded-lg overflow-hidden bg-green-400/5 hover:bg-green-400/10 transition-colors"
+              <motion.div
+                className="relative rounded-lg overflow-hidden bg-green-400/5 hover:bg-green-400/10 transition-colors h-full flex flex-col"
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 {/* Project Image */}
@@ -210,15 +273,19 @@ return (
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
-                  <h3 className={`text-xl font-bold mb-3 ${
-                    theme === 'dark' ? 'text-white' : 'text-gray-900'
-                  }`}>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3
+                    className={`text-xl font-bold mb-3 ${
+                      theme === "dark" ? "text-white" : "text-gray-900"
+                    }`}
+                  >
                     {project.title}
                   </h3>
-                  <p className={`text-sm mb-4 leading-relaxed ${
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
+                  <p
+                    className={`text-sm mb-4 leading-relaxed flex-grow ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
                     {project.description}
                   </p>
 
@@ -260,9 +327,75 @@ return (
             </motion.div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="flex flex-wrap justify-center mt-12 gap-2">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(currentPage - 1)}
+              className={`px-4 py-2 rounded-lg flex items-center ${
+                currentPage === 1
+                  ? "opacity-50 cursor-not-allowed"
+                  : `${
+                      theme === "dark"
+                        ? "bg-green-400/10 hover:bg-green-400/20 text-white"
+                        : "bg-green-400/10 hover:bg-green-400/20 text-gray-800"
+                    }`
+              }`}
+            >
+              Prev
+            </motion.button>
+
+            {renderPagination().map((page, index) =>
+              typeof page === "number" ? (
+                <motion.button
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-4 py-2 rounded-lg ${
+                    currentPage === page
+                      ? "bg-green-400 text-black"
+                      : `${
+                          theme === "dark"
+                            ? "bg-green-400/10 hover:bg-green-400/20 text-gray-300"
+                            : "bg-green-400/10 hover:bg-green-400/20 text-gray-600"
+                        }`
+                  }`}
+                >
+                  {page}
+                </motion.button>
+              ) : (
+                <span key={index} className="px-3 py-2 text-gray-400">
+                  {page}
+                </span>
+              )
+            )}
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(currentPage + 1)}
+              className={`px-4 py-2 rounded-lg flex items-center ${
+                currentPage === totalPages
+                  ? "opacity-50 cursor-not-allowed"
+                  : `${
+                      theme === "dark"
+                        ? "bg-green-400/10 hover:bg-green-400/20 text-white"
+                        : "bg-green-400/10 hover:bg-green-400/20 text-gray-800"
+                    }`
+              }`}
+            >
+              Next
+            </motion.button>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default Projects; 
+export default Projects;

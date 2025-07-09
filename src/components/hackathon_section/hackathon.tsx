@@ -1,7 +1,7 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { IconTrophy, IconUsers, IconCalendar, IconAward, IconArrowRight } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 import Link from 'next/link';
@@ -9,6 +9,8 @@ import { useTheme } from '@/context/ThemeContext';
 
 const Hackathon = () => {
   const { theme } = useTheme();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
   
   const hackathons = [
     {
@@ -55,13 +57,26 @@ const Hackathon = () => {
     },
   ];
 
+  // Calculate pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentHackathons = hackathons.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(hackathons.length / itemsPerPage);
+
+  // Reset to page 1 when component mounts
+  useEffect(() => {
+    setCurrentPage(1);
+  }, []);
 
   return (
-    <section id="hackathon" className={`py-20 relative transition-colors duration-300 ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-b from-black to-gray-900' 
-        : 'bg-gradient-to-b from-white to-gray-100'
-    }`}>
+    <section
+      id="hackathon"
+      className={`py-20 relative transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gradient-to-b from-black to-gray-900"
+          : "bg-gradient-to-b from-white to-gray-100"
+      }`}
+    >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -70,16 +85,18 @@ const Hackathon = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+          >
             Hackathon <span className="text-green-400">Achievements</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {hackathons.map((hackathon, index) => (
+          {currentHackathons.map((hackathon, index) => (
             <motion.article
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -118,9 +135,11 @@ const Hackathon = () => {
                     {hackathon.title}
                   </h3>
 
-                  <div className={`flex flex-wrap gap-4 text-sm mb-4 ${
-                    theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-                  }`}>
+                  <div
+                    className={`flex flex-wrap gap-4 text-sm mb-4 ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-500"
+                    }`}
+                  >
                     <div className="flex items-center gap-1">
                       <IconCalendar size={16} />
                       <span>{hackathon.date}</span>
@@ -131,9 +150,11 @@ const Hackathon = () => {
                     </div>
                   </div>
 
-                  <p className={`mb-4 ${
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
+                  <p
+                    className={`mb-4 ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
                     {hackathon.description}
                   </p>
 
@@ -145,7 +166,7 @@ const Hackathon = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: idx * 0.1 }}
                         className={`flex items-center gap-2 ${
-                          theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                          theme === "dark" ? "text-gray-300" : "text-gray-600"
                         }`}
                       >
                         <IconAward size={16} className="text-green-400" />
@@ -153,20 +174,81 @@ const Hackathon = () => {
                       </motion.div>
                     ))}
                   </div>
-                    <Link href="/coming-soon">
-                      <motion.p
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className='mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1'
-                      >
-                        Read More <IconArrowRight size={16} />
-                      </motion.p>
-                    </Link>
+                  <Link href="/coming-soon">
+                    <motion.p
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1"
+                    >
+                      Read More <IconArrowRight size={16} />
+                    </motion.p>
+                  </Link>
                 </div>
               </motion.div>
             </motion.article>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-12 gap-2">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(currentPage - 1)}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === 1
+                  ? "opacity-50 cursor-not-allowed"
+                  : `${
+                      theme === "dark"
+                        ? "bg-green-400/10 hover:bg-green-400/20 text-white"
+                        : "bg-green-400/10 hover:bg-green-400/20 text-gray-800"
+                    }`
+              }`}
+            >
+              Prev
+            </motion.button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <motion.button
+                key={page}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentPage(page)}
+                className={`px-4 py-2 rounded-lg ${
+                  currentPage === page
+                    ? "bg-green-400 text-black"
+                    : `${
+                        theme === "dark"
+                          ? "bg-green-400/10 hover:bg-green-400/20 text-gray-300"
+                          : "bg-green-400/10 hover:bg-green-400/20 text-gray-600"
+                      }`
+                }`}
+              >
+                {page}
+              </motion.button>
+            ))}
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(currentPage + 1)}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === totalPages
+                  ? "opacity-50 cursor-not-allowed"
+                  : `${
+                      theme === "dark"
+                        ? "bg-green-400/10 hover:bg-green-400/20 text-white"
+                        : "bg-green-400/10 hover:bg-green-400/20 text-gray-800"
+                    }`
+              }`}
+            >
+              Next
+            </motion.button>
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -188,4 +270,4 @@ const Hackathon = () => {
   );
 };
 
-export default Hackathon; 
+export default Hackathon;

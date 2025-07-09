@@ -1,13 +1,15 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { IconCalendar, IconClock, IconArrowRight } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
 import { useTheme } from '@/context/ThemeContext';
 
 const Blog = () => {
   const { theme } = useTheme();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
   
   const blogPosts = [
     {
@@ -42,13 +44,26 @@ const Blog = () => {
     },
   ];
 
+  // Calculate pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentBlogPosts = blogPosts.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(blogPosts.length / itemsPerPage);
+
+  // Reset to page 1 when component mounts
+  useEffect(() => {
+    setCurrentPage(1);
+  }, []);
 
   return (
-    <section id="blog" className={`py-20 relative transition-colors duration-300 ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-b from-black to-gray-900' 
-        : 'bg-gradient-to-b from-white to-gray-100'
-    }`}>
+    <section
+      id="blog"
+      className={`py-20 relative transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gradient-to-b from-black to-gray-900"
+          : "bg-gradient-to-b from-white to-gray-100"
+      }`}
+    >
       <GridBackground />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -57,16 +72,18 @@ const Blog = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+          >
             Latest <span className="text-green-400">Blog Posts</span>
           </h2>
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {currentBlogPosts.map((post, index) => (
             <motion.article
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -74,7 +91,7 @@ const Blog = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <motion.div 
+              <motion.div
                 className="bg-green-400/5 rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors"
                 whileHover={{ scale: 1.02, y: -5 }}
               >
@@ -97,9 +114,11 @@ const Blog = () => {
 
                 {/* Blog Content */}
                 <div className="p-6">
-                  <div className={`flex items-center gap-4 text-sm mb-4 ${
-                    theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-                  }`}>
+                  <div
+                    className={`flex items-center gap-4 text-sm mb-4 ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-500"
+                    }`}
+                  >
                     <div className="flex items-center gap-1">
                       <IconCalendar size={16} />
                       <span>{post.date}</span>
@@ -113,9 +132,11 @@ const Blog = () => {
                   <h3 className="text-xl font-bold text-green-400 mb-3 group-hover:text-green-300 transition-colors">
                     {post.title}
                   </h3>
-                  <p className={`mb-4 ${
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
+                  <p
+                    className={`mb-4 ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
                     {post.excerpt}
                   </p>
 
@@ -132,6 +153,67 @@ const Blog = () => {
             </motion.article>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-12 gap-2">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(currentPage - 1)}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === 1
+                  ? "opacity-50 cursor-not-allowed"
+                  : `${
+                      theme === "dark"
+                        ? "bg-green-400/10 hover:bg-green-400/20 text-white"
+                        : "bg-green-400/10 hover:bg-green-400/20 text-gray-800"
+                    }`
+              }`}
+            >
+              Prev
+            </motion.button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <motion.button
+                key={page}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentPage(page)}
+                className={`px-4 py-2 rounded-lg ${
+                  currentPage === page
+                    ? "bg-green-400 text-black"
+                    : `${
+                        theme === "dark"
+                          ? "bg-green-400/10 hover:bg-green-400/20 text-gray-300"
+                          : "bg-green-400/10 hover:bg-green-400/20 text-gray-600"
+                      }`
+                }`}
+              >
+                {page}
+              </motion.button>
+            ))}
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(currentPage + 1)}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === totalPages
+                  ? "opacity-50 cursor-not-allowed"
+                  : `${
+                      theme === "dark"
+                        ? "bg-green-400/10 hover:bg-green-400/20 text-white"
+                        : "bg-green-400/10 hover:bg-green-400/20 text-gray-800"
+                    }`
+              }`}
+            >
+              Next
+            </motion.button>
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -155,4 +237,4 @@ const Blog = () => {
   );
 };
 
-export default Blog; 
+export default Blog;
