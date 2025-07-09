@@ -12,8 +12,10 @@ import Contact from '@/components/contact_section/contact';
 import Footer from '@/components/footer/footer';
 
 export const metadata: Metadata = {
-  title: "Suthakar Anburaj - Full Stack Developer & Software Engineer Portfolio",
-  description: "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies. View my portfolio, projects, and professional experience.",
+  title:
+    "Suthakar Anburaj - Full Stack Developer & Software Engineer Portfolio",
+  description:
+    "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies. View my portfolio, projects, and professional experience.",
   keywords: [
     "Suthakar Anburaj",
     "Full Stack Developer",
@@ -29,11 +31,13 @@ export const metadata: Metadata = {
     "Portfolio",
     "Web Applications",
     "Mobile Development",
-    "UI/UX Design"
+    "UI/UX Design",
   ],
   openGraph: {
-    title: "Suthakar Anburaj - Full Stack Developer & Software Engineer Portfolio",
-    description: "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.",
+    title:
+      "Suthakar Anburaj - Full Stack Developer & Software Engineer Portfolio",
+    description:
+      "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.",
     url: "https://suthakaranburaj.com",
     type: "website",
     images: [
@@ -47,9 +51,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suthakar Anburaj - Full Stack Developer & Software Engineer Portfolio",
-    description: "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.",
-    images: ["/logo.png"],
+    title:
+      "Suthakar Anburaj - Full Stack Developer & Software Engineer Portfolio",
+    description:
+      "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.",
+    images: ["https://suthakaranburaj.com/logo.png"],
   },
 };
 

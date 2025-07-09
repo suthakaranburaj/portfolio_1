@@ -18,10 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Suthakar Anburaj - Full Stack Developer & Software Engineer",
-    template: "%s | Suthakar Anburaj"
+    template: "%s | Suthakar Anburaj",
   },
-  description: "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies. View my portfolio, projects, and professional experience.",
+  description:
+    "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies. View my portfolio, projects, and professional experience.",
   keywords: [
+    "Suthakar",
+    "Anburaj",
     "Suthakar Anburaj",
     "Full Stack Developer",
     "Software Engineer",
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     "Portfolio",
     "Web Applications",
     "Mobile Development",
-    "UI/UX Design"
+    "UI/UX Design",
   ],
   authors: [{ name: "Suthakar Anburaj" }],
   creator: "Suthakar Anburaj",
@@ -46,32 +49,34 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://suthakaranburaj.com'),
+  metadataBase: new URL("https://suthakaranburaj.com"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://suthakaranburaj.com',
-    title: 'Suthakar Anburaj - Full Stack Developer & Software Engineer',
-    description: 'Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies. View my portfolio, projects, and professional experience.',
-    siteName: 'Suthakar Anburaj Portfolio',
+    type: "website",
+    locale: "en_US",
+    url: "https://suthakaranburaj.com",
+    title: "Suthakar Anburaj - Full Stack Developer & Software Engineer",
+    description:
+      "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies. View my portfolio, projects, and professional experience.",
+    siteName: "Suthakar Anburaj Portfolio",
     images: [
       {
-        url: '/logo.png',
+        url: "https://suthakaranburaj.com/logo.png",
         width: 1200,
         height: 630,
-        alt: 'Suthakar Anburaj - Full Stack Developer',
+        alt: "Suthakar Anburaj - Full Stack Developer",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Suthakar Anburaj - Full Stack Developer & Software Engineer',
-    description: 'Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.',
-    images: ['/logo.png'],
-    creator: '@suthakaranburaj',
+    card: "summary_large_image",
+    title: "Suthakar Anburaj - Full Stack Developer & Software Engineer",
+    description:
+      "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.",
+    images: ["https://suthakaranburaj.com/logo.png"],
+    creator: "@suthakaranburaj",
   },
   robots: {
     index: true,
@@ -79,15 +84,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
   },
 };
 
