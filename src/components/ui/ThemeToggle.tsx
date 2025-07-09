@@ -13,7 +13,7 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className={`cursor-pointer relative w-12 h-12 rounded-full p-0.5 shadow-lg hover:shadow-xl transition-all duration-300 ${
+      className={`cursor-pointer relative w-8 h-8 rounded-full p-0.5 shadow-lg hover:shadow-xl transition-all duration-300 ${
         theme === 'dark' 
           ? 'bg-gradient-to-r from-gray-700 to-gray-800' 
           : 'bg-gradient-to-r from-green-400 to-blue-500'
