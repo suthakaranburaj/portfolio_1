@@ -61,17 +61,22 @@ function Hero() {
   ];
 
   return (
-    <div id="home" className={`pt-10 min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300 ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-b from-black to-gray-900 text-white' 
-        : 'bg-gradient-to-b from-white to-gray-100 text-gray-900'
-    }`}>
+    <div
+      id="home"
+      className={`pt-10 min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gradient-to-b from-black to-gray-900 text-white"
+          : "bg-gradient-to-b from-white to-gray-100 text-gray-900"
+      }`}
+    >
       {/* Grid Background */}
-      <div className={`absolute inset-0 transition-colors duration-300 ${
-        theme === 'dark'
-          ? 'bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]'
-          : 'bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:14px_24px]'
-      }`}></div>
+      <div
+        className={`absolute inset-0 transition-colors duration-300 ${
+          theme === "dark"
+            ? "bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"
+            : "bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:14px_24px]"
+        }`}
+      ></div>
 
       {/* Decorative Elements */}
       <div className="absolute inset-0">
@@ -172,9 +177,11 @@ function Hero() {
               </h1>
             </div>
 
-            <div className={`h-12 text-2xl md:text-3xl ${
-              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-            }`}>
+            <div
+              className={`h-12 text-2xl md:text-3xl ${
+                theme === "dark" ? "text-gray-300" : "text-gray-600"
+              }`}
+            >
               <Typewriter
                 options={{
                   strings: roles,
@@ -187,14 +194,16 @@ function Hero() {
             </div>
 
             <div className="space-y-4">
-              <p className={`md:text-lg max-w-2xl leading-relaxed ${
-                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-              }`}>
-                I&apos;m always the first to take on complex and unique problems.
-                I believe every challenge teaches us something valuable. I
-                specialize in developing highly complex backend and frontend
-                functionalities, with a passion for turning tough problems into
-                simple, beautiful, and intuitive solutions.
+              <p
+                className={`md:text-lg max-w-2xl leading-relaxed ${
+                  theme === "dark" ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                I&apos;m always the first to take on complex and unique
+                problems. I believe every challenge teaches us something
+                valuable. I specialize in developing highly complex backend and
+                frontend functionalities, with a passion for turning tough
+                problems into simple, beautiful, and intuitive solutions.
               </p>
 
               {/* Stats Section */}
@@ -204,18 +213,24 @@ function Hero() {
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">1+</div>
-                  <div className={`text-sm ${
-                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                  }`}>Years Experience</div>
+                  <div
+                    className={`text-sm ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
+                    Years Experience
+                  </div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">16+</div>
-                  <div className={`text-sm ${
-                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
+                  <div
+                    className={`text-sm ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
                     Projects Completed
                   </div>
                 </motion.div>
@@ -224,18 +239,26 @@ function Hero() {
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">5+</div>
-                  <div className={`text-sm ${
-                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                  }`}>Technologies</div>
+                  <div
+                    className={`text-sm ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
+                    Technologies
+                  </div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-green-400/10 p-4 rounded-lg text-center"
                 >
                   <div className="text-2xl font-bold text-green-400">100%</div>
-                  <div className={`text-sm ${
-                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                  }`}>Client Satisfaction</div>
+                  <div
+                    className={`text-sm ${
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
+                    Client Satisfaction
+                  </div>
                 </motion.div>
               </div>
 
@@ -246,7 +269,10 @@ function Hero() {
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-3 bg-gradient-to-r from-green-400 to-blue-500 text-black font-bold rounded-xl shadow-lg hover:from-green-300 hover:to-blue-300 transition-all duration-300"
                 >
-                  <Link href="#contact" className="flex items-center justify-center gap-2">
+                  <Link
+                    href="#contact"
+                    className="flex items-center justify-center gap-2"
+                  >
                     <IconRocket size={20} />
                     Get In Touch
                   </Link>
@@ -256,12 +282,15 @@ function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-8 py-3 border-2 border-green-400 font-bold rounded-xl transition-all duration-300 ${
-                    theme === 'dark'
-                      ? 'text-white hover:bg-green-400 hover:text-black'
-                      : 'text-gray-900 hover:bg-green-400 hover:text-black'
+                    theme === "dark"
+                      ? "text-white hover:bg-green-400 hover:text-black"
+                      : "text-gray-900 hover:bg-green-400 hover:text-black"
                   }`}
                 >
-                  <Link href="/public/Suthakar_Anburaj_15_06_25.pdf" className="flex items-center justify-center gap-2">
+                  <Link
+                    href="/Suthakar_Anburaj_09_07_25.pdf"
+                    className="flex items-center justify-center gap-2"
+                  >
                     <IconFileCv size={20} />
                     Download CV
                   </Link>
@@ -277,9 +306,9 @@ function Hero() {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className={`p-3 rounded-full transition-colors duration-300 ${
-                    theme === 'dark'
-                      ? 'bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white'
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900'
+                    theme === "dark"
+                      ? "bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white"
+                      : "bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   <IconBrandGithub size={24} />

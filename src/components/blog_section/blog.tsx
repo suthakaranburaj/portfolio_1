@@ -13,6 +13,16 @@ const Blog = () => {
   
   const blogPosts = [
     {
+      title: "My Journey at Enpointe Global",
+      excerpt:
+        "7 months. Countless lessons. From debugging with Jitu Bhai to product thinking with Fatema, this internship shaped not just my tech skills but my mindset. Sharing key lessons every junior should read before starting their tech journey!",
+      image: "blog_4.jpg",
+      date: "July 8, 2025",
+      readTime: "5 min read",
+      category: "Internship Experience",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7348322085267460096/",
+    },
+    {
       title: "Don't Miss Out in 2nd Year!",
       excerpt:
         "I entered my second year without joining any community... and I truly regret it. This post shares my turning point, lessons from seniors, and why community can define your college experience.",

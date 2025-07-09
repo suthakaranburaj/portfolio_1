@@ -13,6 +13,14 @@ const YouTube = () => {
   
   const videos = [
     {
+      title: "How to Make Your GitHub Profile Beautiful (README Guide)",
+      thumbnail: "/video_4.png",
+      // views: "244",
+      // date: "2 weeks ago",
+      duration: "7:40",
+      link: "https://www.youtube.com/watch?v=2AAHBmydsCs",
+    },
+    {
       title:
         "GitHub for Beginners: 5 Things Every Fresher Developer Should Know (2025)",
       thumbnail: "/video_1.png",
