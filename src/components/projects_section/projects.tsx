@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
 import Link from "next/link";
@@ -11,6 +11,7 @@ const Projects = () => {
   const { theme } = useTheme();
   const [activeFilter, setActiveFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const [direction, setDirection] = useState(0); // 1 = forward, -1 = backward
   const projectsPerPage = 3;
 
   const filters = ["all", "fullstack", "fullstack + aiml"];
@@ -155,6 +156,12 @@ Implemented predictive models and scenario-based simulations to help institution
     setCurrentPage(1);
   }, [activeFilter]);
 
+  const handlePageChange = (newPage: number) => {
+    if (newPage > currentPage) setDirection(1);
+    else if (newPage < currentPage) setDirection(-1);
+    setCurrentPage(newPage);
+  };
+
   const renderPagination = () => {
     const pages = [];
     const maxVisiblePages = 5;
@@ -196,6 +203,39 @@ Implemented predictive models and scenario-based simulations to help institution
     }
 
     return pages;
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: (direction: number) => ({
+      opacity: 0,
+      x: direction > 0 ? 100 : -100,
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as const,
+      },
+    },
+    exit: (direction: number) => ({
+      opacity: 0,
+      x: direction > 0 ? -100 : 100,
+      transition: {
+        duration: 0.3,
+        ease: "easeIn" as const,
+      },
+    }),
   };
 
   return (
@@ -246,87 +286,119 @@ Implemented predictive models and scenario-based simulations to help institution
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
-            >
+        {/* Projects Grid with Animated Transitions */}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={`${currentPage}-${activeFilter}`}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {currentProjects.map((project) => (
               <motion.div
-                className="relative rounded-lg overflow-hidden bg-green-400/5 hover:bg-green-400/10 transition-colors h-full flex flex-col"
-                whileHover={{ scale: 1.02, y: -5 }}
+                key={project.title}
+                custom={direction}
+                variants={itemVariants}
+                className="group"
               >
-                {/* Project Image */}
-                <div className="relative aspect-video overflow-hidden">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-cover w-full h-full"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                </div>
+                <motion.div
+                  className="relative rounded-lg overflow-hidden bg-green-400/5 hover:bg-green-400/10 transition-colors h-full flex flex-col"
+                  whileHover={{
+                    scale: 1.02,
+                    y: -5,
+                    boxShadow:
+                      theme === "dark"
+                        ? "0 10px 30px -15px rgba(74, 222, 128, 0.2)"
+                        : "0 10px 30px -15px rgba(0, 0, 0, 0.1)",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Project Image */}
+                  <div className="relative aspect-video overflow-hidden">
+                    <motion.img
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover w-full h-full"
+                      initial={{ opacity: 0.8, scale: 1 }}
+                      whileHover={{ opacity: 1, scale: 1.05 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  </div>
 
-                {/* Project Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3
-                    className={`text-xl font-bold mb-3 ${
-                      theme === "dark" ? "text-white" : "text-gray-900"
-                    }`}
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    className={`text-sm mb-4 leading-relaxed flex-grow ${
-                      theme === "dark" ? "text-gray-300" : "text-gray-600"
-                    }`}
-                  >
-                    {project.description}
-                  </p>
+                  {/* Project Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3
+                      className={`text-xl font-bold mb-3 ${
+                        theme === "dark" ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {project.title}
+                    </h3>
+                    <p
+                      className={`text-sm mb-4 leading-relaxed flex-grow ${
+                        theme === "dark" ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
+                      {project.description}
+                    </p>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 py-1 bg-green-400/10 text-green-400 text-xs rounded-full"
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map((tag, tagIndex) => (
+                        <motion.span
+                          key={tagIndex}
+                          className="px-2 py-1 bg-green-400/10 text-green-400 text-xs rounded-full"
+                          whileHover={{
+                            scale: 1.05,
+                            backgroundColor: "rgba(74, 222, 128, 0.2)",
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </div>
+
+                    {/* Project Links */}
+                    <div className="flex gap-3">
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        <motion.div
+                          className="flex items-center gap-2 px-4 py-2 bg-green-400/10 hover:bg-green-400/20 text-green-400 rounded-lg transition-colors"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <IconBrandGithub size={16} />
+                          Code
+                        </motion.div>
+                      </Link>
+                      <Link
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <motion.div
+                          className="flex items-center gap-2 px-4 py-2 bg-green-400 text-black hover:bg-green-500 rounded-lg transition-colors"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <IconExternalLink size={16} />
+                          Live
+                        </motion.div>
+                      </Link>
+                    </div>
                   </div>
-
-                  {/* Project Links */}
-                  <div className="flex gap-3">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-green-400/10 hover:bg-green-400/20 text-green-400 rounded-lg transition-colors"
-                    >
-                      <IconBrandGithub size={16} />
-                      Code
-                    </Link>
-                    <Link
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-green-400 text-black hover:bg-green-500 rounded-lg transition-colors"
-                    >
-                      <IconExternalLink size={16} />
-                      Live
-                    </Link>
-                  </div>
-                </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         {totalPages > 1 && (
           <div className="flex flex-wrap justify-center mt-12 gap-2">
@@ -334,7 +406,7 @@ Implemented predictive models and scenario-based simulations to help institution
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               disabled={currentPage === 1}
-              onClick={() => setCurrentPage(currentPage - 1)}
+              onClick={() => handlePageChange(currentPage - 1)}
               className={`px-4 py-2 rounded-lg flex items-center ${
                 currentPage === 1
                   ? "opacity-50 cursor-not-allowed"
@@ -354,7 +426,7 @@ Implemented predictive models and scenario-based simulations to help institution
                   key={index}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setCurrentPage(page)}
+                  onClick={() => handlePageChange(page)}
                   className={`px-4 py-2 rounded-lg ${
                     currentPage === page
                       ? "bg-green-400 text-black"
@@ -364,6 +436,9 @@ Implemented predictive models and scenario-based simulations to help institution
                             : "bg-green-400/10 hover:bg-green-400/20 text-gray-600"
                         }`
                   }`}
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
                   {page}
                 </motion.button>
@@ -378,7 +453,7 @@ Implemented predictive models and scenario-based simulations to help institution
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage(currentPage + 1)}
+              onClick={() => handlePageChange(currentPage + 1)}
               className={`px-4 py-2 rounded-lg flex items-center ${
                 currentPage === totalPages
                   ? "opacity-50 cursor-not-allowed"
