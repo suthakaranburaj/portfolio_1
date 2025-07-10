@@ -107,7 +107,7 @@ export default function RootLayout({
     <html style={{ overflowX: "hidden" }} lang="en" className="dark">
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.ico" />
         <link rel="manifest" href="/logo.png" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
