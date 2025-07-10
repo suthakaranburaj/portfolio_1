@@ -148,7 +148,7 @@ const Hackathon = () => {
             exit="exit"
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {currentHackathons.map((hackathon, index) => (
+            {currentHackathons.map((hackathon) => (
               <motion.div
                 key={hackathon.title}
                 custom={direction}

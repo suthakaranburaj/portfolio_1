@@ -124,7 +124,7 @@ const YouTube = () => {
             exit="exit"
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {currentVideos.map((video, index) => (
+            {currentVideos.map((video) => (
               <motion.div
                 key={video.title}
                 custom={direction}
