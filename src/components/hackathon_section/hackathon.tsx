@@ -153,6 +153,9 @@ const Hackathon = () => {
                 key={hackathon.title}
                 custom={direction}
                 variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
                 <motion.div
                   className="bg-green-400/5 rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors"
