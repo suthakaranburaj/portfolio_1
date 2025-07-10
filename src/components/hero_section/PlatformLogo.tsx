@@ -11,25 +11,25 @@ const PlatformLogo = () => {
     {
       name: "LeetCode",
       icon: <SiLeetcode size={18} />,
-      url: "https://leetcode.com/yourusername",
+      url: "https://leetcode.com/u/suthakaranburaj/",
       color: TEAL,
     },
     {
       name: "GeeksForGeeks",
       icon: <SiGeeksforgeeks size={18} />,
-      url: "https://auth.geeksforgeeks.org/user/yourusername",
+      url: "https://www.geeksforgeeks.org/user/suthakaranburaj/",
       color: PURPLE,
     },
     {
       name: "CodeChef",
       icon: <SiCodechef size={18} />,
-      url: "https://www.codechef.com/users/yourusername",
+      url: "https://www.codechef.com/users/suthakaranbu",
       color: YELLOW,
     },
     {
       name: "LinkedIn",
       icon: <FaLinkedin size={18} />,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/suthakar-anburaj-7bb816290/",
       color: BLUE,
     },
     // {
@@ -47,7 +47,7 @@ const PlatformLogo = () => {
     {
       name: "GitHub",
       icon: <FaGithub size={18} />,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/suthakaranburaj",
       color: "#FFFFFF",
     },
   ];

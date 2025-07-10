@@ -315,7 +315,7 @@ function Hero() {
                 </motion.a>
 
                 <motion.a
-                  href="https://linkedin.com/in/suthakaranburaj"
+                  href="https://www.linkedin.com/in/suthakar-anburaj-7bb816290/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
