@@ -8,7 +8,6 @@ import {
   IconCalendar,
   IconAward,
   IconArrowRight,
-  IconBrandYoutube,
 } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
 import Link from "next/link";
