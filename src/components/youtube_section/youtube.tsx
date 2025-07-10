@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconBrandYoutube } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
@@ -88,9 +88,19 @@ const YouTube = () => {
     }),
   };
 
+  const blogSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (blogSectionRef.current) {
+      blogSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentPage]);
   return (
     <section
       id="youtube"
+      ref={blogSectionRef}
       className={`py-20 relative transition-colors duration-300 ${
         theme === "dark"
           ? "bg-gradient-to-b from-black to-gray-900"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
@@ -238,9 +238,20 @@ Implemented predictive models and scenario-based simulations to help institution
     }),
   };
 
+  const blogSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (blogSectionRef.current) {
+      blogSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentPage]);
+
   return (
     <section
       id="projects"
+      ref={blogSectionRef}
       className={`py-20 relative transition-colors duration-300 ${
         theme === "dark"
           ? "bg-gradient-to-b from-black to-gray-900"

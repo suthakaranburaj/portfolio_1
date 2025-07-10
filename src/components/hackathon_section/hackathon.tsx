@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IconTrophy,
@@ -111,9 +111,20 @@ const Hackathon = () => {
     }),
   };
 
+  const blogSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (blogSectionRef.current) {
+      blogSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentPage]);
+
   return (
     <section
       id="hackathon"
+      ref={blogSectionRef}
       className={`py-20 relative transition-colors duration-300 ${
         theme === "dark"
           ? "bg-gradient-to-b from-black to-gray-900"

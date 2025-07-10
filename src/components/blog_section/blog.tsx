@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconCalendar, IconClock, IconArrowRight } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
@@ -102,9 +102,20 @@ const Blog = () => {
     }),
   };
 
+  const blogSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (blogSectionRef.current) {
+      blogSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentPage]);
+
   return (
     <section
       id="blog"
+      ref={blogSectionRef}
       className={`py-20 relative transition-colors duration-300 ${
         theme === "dark"
           ? "bg-gradient-to-b from-black to-gray-900"
