@@ -103,7 +103,12 @@ const Blog = () => {
   };
 
   const blogSectionRef = useRef<HTMLElement>(null);
+  const initialLoad = useRef(true);
   useEffect(() => {
+    if (initialLoad.current) {
+      initialLoad.current = false;
+      return;
+    }
     if (blogSectionRef.current) {
       blogSectionRef.current.scrollIntoView({
         behavior: "smooth",
