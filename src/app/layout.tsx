@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     siteName: "Suthakar Anburaj Portfolio",
     images: [
       {
-        url: "https://suthakaranburaj.com/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Suthakar Anburaj - Full Stack Developer",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Suthakar Anburaj - Full Stack Developer & Software Engineer",
     description:
       "Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies.",
-    images: ["https://suthakaranburaj.com/logo.png"],
+    images: ["/logo.png"],
     creator: "@suthakaranburaj",
   },
   robots: {
@@ -119,12 +119,6 @@ export default function RootLayout({
           property="og:description"
           content="Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies."
         />
-        <meta
-          property="og:image"
-          content="https://suthakaranburaj.com/logo.png"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://suthakaranburaj.com" />
         <meta property="og:type" content="website" />
 
