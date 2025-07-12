@@ -111,6 +111,37 @@ export default function RootLayout({
         <link rel="manifest" href="/logo.png" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          property="og:title"
+          content="Suthakar Anburaj - Full Stack Developer & Software Engineer"
+        />
+        <meta
+          property="og:description"
+          content="Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies."
+        />
+        <meta
+          property="og:image"
+          content="https://suthakaranburaj.com/logo.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://suthakaranburaj.com" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Suthakar Anburaj - Full Stack Developer & Software Engineer"
+        />
+        <meta
+          name="twitter:description"
+          content="Full Stack Developer and Software Engineer with expertise in React, Next.js, Node.js, and modern web technologies."
+        />
+        <meta
+          name="twitter:image"
+          content="https://suthakaranburaj.com/logo.png"
+        />
+        <meta name="twitter:creator" content="@suthakaranburaj" />
 
         {/* Comprehensive Structured Data */}
         <script
