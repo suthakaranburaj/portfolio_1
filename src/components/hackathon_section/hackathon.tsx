@@ -32,7 +32,7 @@ const Hackathon = () => {
         "Created resource allocation tools",
         "Selected as a finalist in our first hackathon",
       ],
-      image: "/err_6_0.png",
+      image: "/hackathons/err_6_0.png",
     },
     {
       title: "Recursion 6.0",
@@ -46,7 +46,7 @@ const Hackathon = () => {
         "Smart alerts and budget forecasting",
         "Top 15 finalist out of competitive entries",
       ],
-      image: "/recursion_6_0.png",
+      image: "/hackathons/recursion_6_0.png",
     },
     {
       title: "Code Crafters 2.0",
@@ -60,7 +60,7 @@ const Hackathon = () => {
         "Followed MVC architecture throughout",
         "Ranked in Top 7 among 100+ teams",
       ],
-      image: "/code_crafters2_0.png",
+      image: "/hackathons/code_crafters2_0.png",
     },
   ];
 

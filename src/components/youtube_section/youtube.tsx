@@ -15,27 +15,27 @@ const YouTube = () => {
   const videos = [
     {
       title: "How to Make Your GitHub Profile Beautiful (README Guide)",
-      thumbnail: "/video_4.png",
+      thumbnail: "/youtube/video_4.png",
       duration: "7:40",
       link: "https://www.youtube.com/watch?v=2AAHBmydsCs",
     },
     {
       title:
         "GitHub for Beginners: 5 Things Every Fresher Developer Should Know (2025)",
-      thumbnail: "/video_1.png",
+      thumbnail: "/youtube/video_1.png",
       duration: "7:40",
       link: "https://youtu.be/FD6YHSIcZIo?si=m5asZBqbf-d-J2a1",
     },
     {
       title: "How to Set Up a Next.js Project in 2025 (Beginner Friendly)",
-      thumbnail: "/video_2.png",
+      thumbnail: "/youtube/video_2.png",
       duration: "3:40",
       link: "https://youtu.be/0omo_DigYSU?si=KfQMC-S2FuiG12uI",
     },
     {
       title:
         "How to Host HTML CSS Website on Vercel for FREE (Beginner Friendly)",
-      thumbnail: "/video_3.png",
+      thumbnail: "/youtube/video_3.png",
       duration: "5:22",
       link: "https://youtu.be/9SnzgEssFiE?si=_AfbV5fNht0o3ij7",
     },

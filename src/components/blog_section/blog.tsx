@@ -17,7 +17,7 @@ const Blog = () => {
       title: "My Journey at Enpointe Global",
       excerpt:
         "7 months. Countless lessons. From debugging with Jitu Bhai to product thinking with Fatema, this internship shaped not just my tech skills but my mindset. Sharing key lessons every junior should read before starting their tech journey!",
-      image: "blog_4.jpg",
+      image: "blogs/blog_4.jpg",
       date: "July 8, 2025",
       readTime: "5 min read",
       category: "Internship Experience",
@@ -27,7 +27,7 @@ const Blog = () => {
       title: "Don't Miss Out in 2nd Year!",
       excerpt:
         "I entered my second year without joining any community... and I truly regret it. This post shares my turning point, lessons from seniors, and why community can define your college experience.",
-      image: "blog_2.jpeg",
+      image: "/blogs/blog_2.jpeg",
       date: "June 19, 2025",
       readTime: "4 min read",
       category: "College Life",
@@ -37,7 +37,7 @@ const Blog = () => {
       title: "My First Open Source Project",
       excerpt:
         "From zero web dev knowledge to launching ClipVerse, a full-stack MERN video platform. Read about my journey, features, and the lessons I learned from building it alongside a great team.",
-      image: "blog_1.png",
+      image: "/blogs/blog_1.png",
       date: "October, 2024",
       readTime: "3 min read",
       category: "Open Source Project",
@@ -47,7 +47,7 @@ const Blog = () => {
       title: "Why Your Online Presence Matters",
       excerpt:
         "In today's digital-first world, your portfolio and social presence aren't optional—they're essential. Here's why sharing your journey, no matter how small, builds your brand and helps others too.",
-      image: "blog_3.webp",
+      image: "/blogs/blog_3.webp",
       date: "June 22, 2025",
       readTime: "4 min read",
       category: "Personal Branding",
