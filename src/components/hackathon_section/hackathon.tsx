@@ -7,10 +7,9 @@ import {
   IconUsers,
   IconCalendar,
   IconAward,
-  IconArrowRight,
 } from "@tabler/icons-react";
 import GridBackground from "../ui/grid-background";
-import Link from "next/link";
+// import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
 
 const Hackathon = () => {
@@ -242,7 +241,7 @@ const Hackathon = () => {
                         </motion.div>
                       ))}
                     </div>
-                    <Link href="/coming-soon">
+                    {/* <Link href="/coming-soon">
                       <motion.p
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -250,7 +249,7 @@ const Hackathon = () => {
                       >
                         Read More <IconArrowRight size={16} />
                       </motion.p>
-                    </Link>
+                    </Link> */}
                   </div>
                 </motion.div>
               </motion.div>

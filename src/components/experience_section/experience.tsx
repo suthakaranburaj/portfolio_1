@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconArrowRight, IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react';
+import { IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react';
 import GridBackground from '../ui/grid-background';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useTheme } from '@/context/ThemeContext';
 
 const Experience = () => {
@@ -12,6 +12,7 @@ const Experience = () => {
   
   const experiences = [
     {
+      id: "junior-software-developer",
       title: "Junior Software Developer",
       company: "Enpointe.io",
       period: "2024 - Present",
@@ -26,6 +27,7 @@ const Experience = () => {
       ],
     },
     {
+      id: "senior-technical-coordinator",
       title: "Senior Technical Coordinator",
       company: "Arena SIESGST",
       period: "2024 - 2025",
@@ -156,7 +158,7 @@ const Experience = () => {
                         </motion.li>
                       ))}
                     </ul>
-                    <Link href={`/experience/${index + 1}`}>
+                    {/* <Link href={`/experience/${exp.id}`}>
                       <motion.p
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -164,7 +166,7 @@ const Experience = () => {
                       >
                         Read More about my experience <IconArrowRight size={16} />
                       </motion.p>
-                    </Link>
+                    </Link> */}
                   </motion.div>
                 </div>
               </div>
