@@ -34,6 +34,16 @@ const Blog = () => {
       link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
     },
     {
+      title: "Our First DSA & CP Workshop!",
+      excerpt:
+        "A 2-day hands-on workshop focused on helping juniors break the myth that CP requires mastering all of DSA first. From real hiring insights to solving with basics, this session was packed with problem-solving energy and community learning!",
+      image: "/blogs/blog_5.jpg",
+      date: "August 2, 2025",
+      readTime: "3 min read",
+      category: "Teaching Experience",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7357801199993077763",
+    },
+    {
       title: "My First Open Source Project",
       excerpt:
         "From zero web dev knowledge to launching ClipVerse, a full-stack MERN video platform. Read about my journey, features, and the lessons I learned from building it alongside a great team.",
