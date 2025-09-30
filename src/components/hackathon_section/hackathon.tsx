@@ -20,6 +20,20 @@ const Hackathon = () => {
 
   const hackathons = [
     {
+      title: "IDEATION ’25",
+      position: "Winner",
+      date: "19 September 2025",
+      team: "ForceCode",
+      description:
+        "Explored the global crisis of rising urban air pollution and proposed innovative, tech-driven solutions.We focused on practical, research-backed solutions",
+      achievements: [
+        "Won IDEATION ’25 at IETE SIESGST",
+        "Built AI-based eco-routing & carbon tracking solutions",
+        "Created real-time AQI dashboards and predictive analytics",
+      ],
+      image: "/hackathons/Ideation_2025.jpg",
+    },
+    {
       title: "Err404 6.0",
       position: "Participated",
       date: "15-16 February 2025",

@@ -34,6 +34,16 @@ const Blog = () => {
       link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
     },
     {
+      title: "Enigma 4.0 – National Level Hackathon",
+      excerpt:
+        "Part of the organizing team for Enigma 4.0, a 12-hour national hackathon. Contributed as Tech Mentor, managing tech and ensuring smooth participation while learning event management and teamwork.",
+      image: "/blogs/blog_6.jpg",
+      date: "September 20, 2025",
+      readTime: "3 min read",
+      category: "Hackathon Organizing Experience",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7377636532234473472/",
+    },
+    {
       title: "Our First DSA & CP Workshop!",
       excerpt:
         "A 2-day hands-on workshop focused on helping juniors break the myth that CP requires mastering all of DSA first. From real hiring insights to solving with basics, this session was packed with problem-solving energy and community learning!",
