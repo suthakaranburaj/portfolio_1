@@ -1,7 +1,7 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   IconBrandGithub,
@@ -24,40 +24,83 @@ import {
   IconFileCv,
   IconBrandLeetcode,
 } from "@tabler/icons-react";
-import Typewriter from 'typewriter-effect';
-import { motion } from 'motion/react';
-import ProfilePic from '../../../assets/profile_pic.jpeg'
+import Typewriter from "typewriter-effect";
+import { motion } from "motion/react";
+import ProfilePic from "../../../assets/profile_pic.jpeg";
 // import MyResume from   '../../../public/Suthakar_Anburaj_15_06_25.pdf'
 import { SiGeeksforgeeks, SiCodechef } from "react-icons/si";
-import { useTheme } from '@/context/ThemeContext';
-
+import { useTheme } from "@/context/ThemeContext";
 
 function Hero() {
   const { theme } = useTheme();
-  
+
   const roles = [
     "Full Stack Developer",
     "Software Engineer",
     "Backend Developer",
     "Frontend Developer",
-    "Entrepreneur"
+    "Entrepreneur",
   ];
 
   const leftSideIcons = [
-    { icon: <IconBrandJavascript size={40} />, position: "top-1/8 left-1/4", color: "text-yellow-400" },
-    { icon: <IconBrandNodejs size={40} />, position: "top-1/9 left-1/3", color: "text-green-400" },
-    { icon: <IconBrandReact size={40} />, position: "bottom-1/8 left-1/4", color: "text-blue-400" },
-    { icon: <IconBrandNextjs size={40 } />, position: "top-1/2 left-1/16", color: "text-white" },
-    { icon: <IconBrandTypescript size={40} />, position: "bottom-1/10 left-1/3", color: "text-blue-500" },
-    { icon: <IconBrandMongodb size={40} />, position: "top-1/10 left-1/10", color: "text-green-500" },
-    { icon: <IconBrandPython size={40} />, position: "bottom-1/8 right-1/2", color: "text-blue-600" },
-    { icon: <IconBrandAws size={40} />, position: "top-1/3 right-1/2", color: "text-orange-400" },
-    { icon: <IconBrandDocker size={40} />, position: "bottom-1/8 left-1/12", color: "text-blue-500" },
+    {
+      icon: <IconBrandJavascript size={40} />,
+      position: "top-1/8 left-1/4",
+      color: "text-yellow-400",
+    },
+    {
+      icon: <IconBrandNodejs size={40} />,
+      position: "top-1/9 left-1/3",
+      color: "text-green-400",
+    },
+    {
+      icon: <IconBrandReact size={40} />,
+      position: "bottom-1/8 left-1/4",
+      color: "text-blue-400",
+    },
+    {
+      icon: <IconBrandNextjs size={40} />,
+      position: "top-1/2 left-1/16",
+      color: "text-white",
+    },
+    {
+      icon: <IconBrandTypescript size={40} />,
+      position: "bottom-1/10 left-1/3",
+      color: "text-blue-500",
+    },
+    {
+      icon: <IconBrandMongodb size={40} />,
+      position: "top-1/10 left-1/10",
+      color: "text-green-500",
+    },
+    {
+      icon: <IconBrandPython size={40} />,
+      position: "bottom-1/8 right-1/2",
+      color: "text-blue-600",
+    },
+    {
+      icon: <IconBrandAws size={40} />,
+      position: "top-1/3 right-1/2",
+      color: "text-orange-400",
+    },
+    {
+      icon: <IconBrandDocker size={40} />,
+      position: "bottom-1/8 left-1/12",
+      color: "text-blue-500",
+    },
   ];
 
   const rightSideIcons = [
-    { icon: <IconBrandYoutube size={40} />, position: "top-1/4 right-1/4", color: "text-red-400" },
-    { icon: <IconBrandX size={40} />, position: "bottom-1/4 right-1/4", color: "text-white" },
+    {
+      icon: <IconBrandYoutube size={40} />,
+      position: "top-1/4 right-1/4",
+      color: "text-red-400",
+    },
+    {
+      icon: <IconBrandX size={40} />,
+      position: "bottom-1/4 right-1/4",
+      color: "text-white",
+    },
   ];
 
   return (
@@ -288,7 +331,7 @@ function Hero() {
                   }`}
                 >
                   <Link
-                    href="/Suthakar_Anburaj_29_09_25_latest.pdf"
+                    href="/Suthakar_Anburaj_82.pdf"
                     className="flex items-center justify-center gap-2"
                   >
                     <IconFileCv size={20} />
