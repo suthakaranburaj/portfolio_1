@@ -34,7 +34,7 @@ const Blog = () => {
       link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
     },
     {
-      title: "ASHA Sakhi – AI-Powered Health Assistance",
+      title: "My Experience at Incuverse 1.0",
       excerpt: `Our team built “ASHA Sakhi” at the Incuverse 1.0 Hackathon a multilingual, AI-driven platform for ASHA workers and patients.The platform has multiple features. Proud to be Top 40 out of 500+ teams!`,
       image: "/blogs/blog_7.jpeg",
       date: "October 5, 2025",
