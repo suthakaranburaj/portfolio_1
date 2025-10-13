@@ -18,12 +18,11 @@ const Experience = () => {
       period: "2024 - Present",
       location: "Mumbai, India",
       description: [
-        "Developed and maintained full-stack features using Vue.js, Node.js, Express, SQL, and Prisma.",
-        "Built and optimized a scalable backend architecture for a movie platform serving 5k–10k daily users.",
-        "Implemented key modules including contract management, invoicing, royalty reporting, and user roles.",
-        "Integrated automated PDF/Excel generation and dynamic email notifications to streamline operations   ",
-        "Improved contract creation workflow efficiency by 50% through backend logic and UI enhancements.",
-        "Worked closely with cross-functional teams to ensure performance, data integrity, and feature delivery.",
+        "Developed and maintained full-stack systems using Vue.js, Express, Prisma, and PostgreSQL, powering a platform with 10k+ DAU.",
+        "Engineered a scalable backend for a movie management platform with JWT authentication, PDF/Excel reports, and real-time alerts (SSE), improving contract efficiency by 20% through workflow and module optimization.",
+        "Debugged and resolved 30% of critical issues and Enhanced PDF/Excel generation performance by 5–10%, enhancing system efficiency.",
+        "Optimized PostgreSQL queries via Prisma ORM, cutting query latency by 15%.",
+        "Spearheaded the backend migration from Node.js 14 to 18 and collaborated in a 4-member Agile team using Git and weekly sprints.",
       ],
     },
     {

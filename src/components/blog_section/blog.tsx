@@ -34,6 +34,15 @@ const Blog = () => {
       link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_are-you-going-to-2nd-year-of-engineering-activity-7337485078324727808-_JNB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
     },
     {
+      title: "ASHA Sakhi – AI-Powered Health Assistance",
+      excerpt: `Our team built “ASHA Sakhi” at the Incuverse 1.0 Hackathon a multilingual, AI-driven platform for ASHA workers and patients.The platform has multiple features. Proud to be Top 40 out of 500+ teams!`,
+      image: "/blogs/blog_7.jpeg",
+      date: "October 5, 2025",
+      readTime: "6 min read",
+      category: "Incuverse 1.0",
+      link: "https://www.linkedin.com/posts/suthakar-anburaj-7bb816290_hackathon-ai-healthcareinnovation-activity-7381308388766343168-kRHC?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEaZnf8BbcVKmA9qLXMwwBkpcEEUt1ykRN4",
+    },
+    {
       title: "Enigma 4.0 – National Level Hackathon",
       excerpt:
         "Part of the organizing team for Enigma 4.0, a 12-hour national hackathon. Contributed as Tech Mentor, managing tech and ensuring smooth participation while learning event management and teamwork.",

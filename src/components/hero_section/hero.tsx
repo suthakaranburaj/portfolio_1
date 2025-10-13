@@ -348,7 +348,7 @@ function Hero() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`p-3 rounded-full transition-colors duration-300 ${
+                  className={`p-3 rounded-full transition-colors dx xuration-300 ${
                     theme === "dark"
                       ? "bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white"
                       : "bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900"

@@ -34,20 +34,6 @@ const Hackathon = () => {
       image: "/hackathons/Ideation_2025.jpg",
     },
     {
-      title: "Err404 6.0",
-      position: "Participated",
-      date: "15-16 February 2025",
-      team: "Team CoreX",
-      description:
-        "Built a predictive system to forecast college admissions and optimize resource planning. Integrated features for faculty recruitment, budget planning, and marketing impact analysis using AI/ML.",
-      achievements: [
-        "Developed admissions prediction model",
-        "Created resource allocation tools",
-        "Selected as a finalist in our first hackathon",
-      ],
-      image: "/hackathons/err_6_0.png",
-    },
-    {
       title: "Recursion 6.0",
       position: "Top 15 Team",
       date: "21-22 March 2025",
@@ -60,6 +46,33 @@ const Hackathon = () => {
         "Top 15 finalist out of competitive entries",
       ],
       image: "/hackathons/recursion_6_0.png",
+    },
+    {
+      title: "Incuverse 1.0",
+      position: "Top 10 Team",
+      date: "27-28 September 2025",
+      team: "NeuraWebCrafters",
+      description: `“ASHA Sakhi” – Multilingual AI health-tech platform for ASHA workers and patients with chatbot, WhatsApp bot, symptom checker, and real-time dashboards.`,
+      achievements: [
+        "Developed AI-powered voice chatbot for ASHA workers",
+        "Top 10 finalist out of 500+ registered teams",
+        "Integrated Google Maps API for nearest ASHA centers and personalized health tips",
+      ],
+      image: "/hackathons/incuverse_1_0.jpeg",
+    },
+    {
+      title: "Err404 6.0",
+      position: "Participated",
+      date: "15-16 February 2025",
+      team: "Team CoreX",
+      description:
+        "Built a predictive system to forecast college admissions and optimize resource planning. Integrated features for faculty recruitment, budget planning, and marketing impact analysis using AI/ML.",
+      achievements: [
+        "Developed admissions prediction model",
+        "Created resource allocation tools",
+        "Selected as a finalist in our first hackathon",
+      ],
+      image: "/hackathons/err_6_0.png",
     },
     {
       title: "Code Crafters 2.0",
