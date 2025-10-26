@@ -331,7 +331,7 @@ function Hero() {
                   }`}
                 >
                   <Link
-                    href="/Suthakar_Anburaj_82.pdf"
+                    href="/Suthakar Anburaj_new (2).pdf"
                     className="flex items-center justify-center gap-2"
                   >
                     <IconFileCv size={20} />
