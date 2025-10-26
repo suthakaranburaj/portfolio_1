@@ -1,6 +1,6 @@
 export const generateStructuredData = () => {
-  const baseUrl = 'https://suthakaranburaj.com';
-  
+  const baseUrl = "https://suthakaranburaj.com";
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -22,7 +22,6 @@ export const generateStructuredData = () => {
         sameAs: [
           "https://github.com/suthakaranburaj",
           "https://www.linkedin.com/in/suthakar-anburaj-7bb816290/",
-          "https://twitter.com/suthakaranburaj",
           "https://instagram.com/suthakaranburaj",
         ],
         knowsAbout: [
@@ -39,11 +38,11 @@ export const generateStructuredData = () => {
         ],
         alumniOf: {
           "@type": "Organization",
-          name: "Your University Name",
+          name: "University of Mumbai", // Replace with actual university
         },
         worksFor: {
           "@type": "Organization",
-          name: "Freelance/Contract",
+          name: "", // Update if employed
         },
       },
       {
@@ -66,6 +65,9 @@ export const generateStructuredData = () => {
           },
           "query-input": "required name=search_term_string",
         },
+        mainEntity: {
+          "@id": `${baseUrl}/#person`,
+        },
       },
       {
         "@type": "WebPage",
@@ -83,6 +85,8 @@ export const generateStructuredData = () => {
         author: {
           "@id": `${baseUrl}/#person`,
         },
+        primaryImageOfPage: `${baseUrl}/logo.png`,
+        // Updated breadcrumb for hash navigation
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [
@@ -94,6 +98,44 @@ export const generateStructuredData = () => {
             },
           ],
         },
+        // IMPORTANT: Add hasPart for hash-based sections
+        hasPart: [
+          {
+            "@type": "WebPageElement",
+            "@id": `${baseUrl}/#about`,
+            name: "About",
+            description: "About Suthakar Anburaj section",
+            isPartOf: `${baseUrl}/#webpage`,
+          },
+          {
+            "@type": "WebPageElement",
+            "@id": `${baseUrl}/#projects`,
+            name: "Projects",
+            description: "Projects portfolio section",
+            isPartOf: `${baseUrl}/#webpage`,
+          },
+          {
+            "@type": "WebPageElement",
+            "@id": `${baseUrl}/#experience`,
+            name: "Experience",
+            description: "Work experience section",
+            isPartOf: `${baseUrl}/#webpage`,
+          },
+          {
+            "@type": "WebPageElement",
+            "@id": `${baseUrl}/#blog`,
+            name: "Blog",
+            description: "Blog and articles section",
+            isPartOf: `${baseUrl}/#webpage`,
+          },
+          {
+            "@type": "WebPageElement",
+            "@id": `${baseUrl}/#hackathon`,
+            name: "Hackathons",
+            description: "Hackathon projects section",
+            isPartOf: `${baseUrl}/#webpage`,
+          },
+        ],
       },
       {
         "@type": "Organization",
@@ -127,6 +169,43 @@ export const generateStructuredData = () => {
         keywords:
           "Full Stack Development, React, Next.js, Node.js, JavaScript, TypeScript, Web Development",
       },
+      // UPDATED: Site Navigation Elements with hash URLs
+      {
+        "@type": "SiteNavigationElement",
+        "@id": `${baseUrl}/#about-nav`,
+        name: "About",
+        url: `${baseUrl}/#about`,
+        description:
+          "Learn more about Suthakar Anburaj's background and skills",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": `${baseUrl}/#projects-nav`,
+        name: "Projects",
+        url: `${baseUrl}/#projects`,
+        description: "View portfolio projects and case studies",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": `${baseUrl}/#experience-nav`,
+        name: "Experience",
+        url: `${baseUrl}/#experience`,
+        description: "Professional experience and work history",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": `${baseUrl}/#blog-nav`,
+        name: "Blog",
+        url: `${baseUrl}/#blog`,
+        description: "Read technical articles and tutorials",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": `${baseUrl}/#hackathon-nav`,
+        name: "Hackathons",
+        url: `${baseUrl}/#hackathon`,
+        description: "Hackathon projects and achievements",
+      },
     ],
   };
-}; 
+};
