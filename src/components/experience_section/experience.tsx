@@ -15,7 +15,7 @@ const Experience = () => {
       id: "junior-software-developer",
       title: "Junior Software Developer",
       company: "Enpointe.io",
-      period: "2024 - Present",
+      period: "Dec 2024 - July 2025",
       location: "Mumbai, India",
       description: [
         "Developed and maintained full-stack systems using Vue.js, Express, Prisma, and PostgreSQL, powering a platform with 10k+ DAU.",
@@ -29,7 +29,7 @@ const Experience = () => {
       id: "senior-technical-coordinator",
       title: "Senior Technical Coordinator",
       company: "Arena SIESGST",
-      period: "2024 - 2025",
+      period: "2024 - Present",
       location: "Navi Mumbai, India",
       description: [
         "Redesigned and updated event pages to align with current-year activities.",

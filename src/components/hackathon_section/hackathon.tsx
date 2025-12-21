@@ -20,6 +20,20 @@ const Hackathon = () => {
 
   const hackathons = [
     {
+      title: "Cyberstrike Error 404 Hackathon",
+      position: "Winner",
+      date: "11 December 2025",
+      team: "Team 404",
+      description:
+        "Built a multi-agent AI reasoning and evaluation system that orchestrates multiple planner–researcher pipelines to generate, validate, iterate, and score AI responses.",
+      achievements: [
+        "Winners of Cyberstrike Error 404 Hackathon",
+        "Designed a multi-agent AI architecture",
+        "Implemented iterative feedback loops for issue detection and response refinement",
+      ],
+      image: "/hackathons/error_404.jpeg",
+    },
+    {
       title: "IDEATION ’25",
       position: "Winner",
       date: "19 September 2025",

@@ -101,6 +101,26 @@ const Projects = () => {
       live: "https://tutedude-2025.vercel.app/",
     },
     {
+      title: "Multi-Agent AI Reasoning & Evaluation System",
+      description: `Designed and implemented a multi-agent AI orchestration system that processes user queries through multiple planner–researcher pipelines (DeepSeek, Grok, Gemini, and custom planners). Each planner generates structured responses, which are iteratively reviewed by corresponding researcher agents to identify gaps, issues, and improvements.The system supports feedback loops, issue tracking across iterations, and response ranking for optimal decision-making.`,
+      image: "/projects/project_4.png",
+      tags: [
+        "AI Agents",
+        "LLMs",
+        "Multi-Agent Systems",
+        "Prompt Engineering",
+        "Reasoning Systems",
+        "Evaluation AI",
+        "Iteration & Feedback Loops",
+        "System Design",
+        "Node.js",
+        "Python",
+      ],
+      category: "fullstack + aiml",
+      github: "https://github.com/Team-CoreX-SIESGST/Error_404_2025.git",
+      live: "https://www.youtube.com/watch?v=fXKYYzs6TOY",
+    },
+    {
       title: "BudgetGuard - Recursion 6.0",
       description: `Built a smart budget assistant that categorizes transactions, detects anomalies, forecasts expenses, and alerts users before they exceed budgets and spending control.
 Integrated ML models to enable personalized financial tracking, insightful trend analysis, and real-time decision-making support through a secure and user-friendly interface.`,
