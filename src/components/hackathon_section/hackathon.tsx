@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IconTrophy,
@@ -8,9 +8,10 @@ import {
   IconCalendar,
   IconAward,
 } from "@tabler/icons-react";
-import GridBackground from "../ui/grid-background";
-// import Link from "next/link";
+
 import { useTheme } from "@/context/ThemeContext";
+
+import GridBackground from "../ui/grid-background";
 
 const Hackathon = () => {
   const { theme } = useTheme();
@@ -20,12 +21,38 @@ const Hackathon = () => {
 
   const hackathons = [
     {
+      title: "CodeCraftors 3.0",
+      position: "1st Place",
+      date: "2026",
+      team: "Om Sai Mitra Mandal",
+      description:
+        "Built Flow Guardian, an offline-first cognitive observability platform that uses a local webcam ML pipeline, keyboard and mouse activity, and app usage context to detect focus, confusion, and fatigue in real time while preserving privacy.",
+      achievements: [
+        "Secured 1st place at CodeCraftors 3.0",
+        "Built an offline-first, privacy-preserving cognitive load platform",
+      ],
+      image: "/hackathons/CodeCrafters3.0.jpeg",
+    },
+    {
+      title: "Techsagar 2026 - National Level AI Hackathon",
+      position: "3rd Place",
+      date: "2026",
+      team: "Gandhar Bagde, Umair Momin",
+      description:
+        "Built an AI-powered fraud detection solution that identified unique and meaningful fraud patterns from noisy real-world datasets using multi-pattern analysis.",
+      achievements: [
+        "Secured 3rd place at Techsagar 2026",
+        "Solved fraud detection using multiple fraud-pattern signals",
+      ],
+      image: "/hackathons/Tasgavkar_2026.jpeg",
+    },
+    {
       title: "Cyberstrike Error 404 Hackathon",
       position: "Winner",
       date: "11 December 2025",
       team: "Team 404",
       description:
-        "Built a multi-agent AI reasoning and evaluation system that orchestrates multiple planner–researcher pipelines to generate, validate, iterate, and score AI responses.",
+        "Built a multi-agent AI reasoning and evaluation system that orchestrates multiple planner-researcher pipelines to generate, validate, iterate, and score AI responses.",
       achievements: [
         "Winners of Cyberstrike Error 404 Hackathon",
         "Designed a multi-agent AI architecture",
@@ -34,15 +61,15 @@ const Hackathon = () => {
       image: "/hackathons/error_404.jpeg",
     },
     {
-      title: "IDEATION ’25",
+      title: "IDEATION '25",
       position: "Winner",
       date: "19 September 2025",
       team: "ForceCode",
       description:
-        "Explored the global crisis of rising urban air pollution and proposed innovative, tech-driven solutions.We focused on practical, research-backed solutions",
+        "Explored the global crisis of rising urban air pollution and proposed innovative, tech-driven solutions focused on practical, research-backed impact.",
       achievements: [
-        "Won IDEATION ’25 at IETE SIESGST",
-        "Built AI-based eco-routing & carbon tracking solutions",
+        "Won IDEATION '25 at IETE SIESGST",
+        "Built AI-based eco-routing and carbon tracking solutions",
         "Created real-time AQI dashboards and predictive analytics",
       ],
       image: "/hackathons/Ideation_2025.jpg",
@@ -66,7 +93,8 @@ const Hackathon = () => {
       position: "Top 10 Team",
       date: "27-28 September 2025",
       team: "NeuraWebCrafters",
-      description: `“ASHA Sakhi” – Multilingual AI health-tech platform for ASHA workers and patients with chatbot, WhatsApp bot, symptom checker, and real-time dashboards.`,
+      description:
+        '"ASHA Sakhi" - Multilingual AI health-tech platform for ASHA workers and patients with chatbot, WhatsApp bot, symptom checker, and real-time dashboards.',
       achievements: [
         "Developed AI-powered voice chatbot for ASHA workers",
         "Top 10 finalist out of 500+ registered teams",
@@ -94,7 +122,7 @@ const Hackathon = () => {
       date: "15-16 March 2025",
       team: "Team CoreX",
       description:
-        "Developed an investment portal to manage stocks, bonds, and insurance using the MVC pattern. Users can get investment suggestions, estimate profits, buy/sell assets, and manage account balances.",
+        "Developed an investment portal to manage stocks, bonds, and insurance using the MVC pattern. Users can get investment suggestions, estimate profits, buy or sell assets, and manage account balances.",
       achievements: [
         "Implemented complete asset management system",
         "Followed MVC architecture throughout",
@@ -104,20 +132,17 @@ const Hackathon = () => {
     },
   ];
 
-  // Calculate pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentHackathons = hackathons.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(hackathons.length / itemsPerPage);
 
-  // Handle page change with direction
   const handlePageChange = (newPage: number) => {
     if (newPage > currentPage) setDirection(1);
     else if (newPage < currentPage) setDirection(-1);
     setCurrentPage(newPage);
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -153,11 +178,13 @@ const Hackathon = () => {
 
   const blogSectionRef = useRef<HTMLElement>(null);
   const initialLoad = useRef(true);
+
   useEffect(() => {
     if (initialLoad.current) {
       initialLoad.current = false;
       return;
     }
+
     if (blogSectionRef.current) {
       blogSectionRef.current.scrollIntoView({
         behavior: "smooth",
@@ -216,7 +243,6 @@ const Hackathon = () => {
                   className="bg-green-400/5 rounded-lg overflow-hidden hover:bg-green-400/10 transition-colors"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
-                  {/* Hackathon Image */}
                   <div className="relative aspect-video overflow-hidden">
                     <motion.img
                       src={hackathon.image}
@@ -237,7 +263,6 @@ const Hackathon = () => {
                     </div>
                   </div>
 
-                  {/* Hackathon Content */}
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-green-400 mb-3 group-hover:text-green-300 transition-colors">
                       {hackathon.title}
@@ -282,15 +307,6 @@ const Hackathon = () => {
                         </motion.div>
                       ))}
                     </div>
-                    {/* <Link href="/coming-soon">
-                      <motion.p
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-4 text-green-400 cursor-pointer inline-flex items-center gap-1"
-                      >
-                        Read More <IconArrowRight size={16} />
-                      </motion.p>
-                    </Link> */}
                   </div>
                 </motion.div>
               </motion.div>
@@ -298,7 +314,6 @@ const Hackathon = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="flex justify-center mt-12 gap-2">
             <motion.button

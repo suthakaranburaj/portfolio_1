@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
-import GridBackground from "../ui/grid-background";
 import Link from "next/link";
+
 import { useTheme } from "@/context/ThemeContext";
+
+import GridBackground from "../ui/grid-background";
 
 const Projects = () => {
   const { theme } = useTheme();
@@ -18,8 +20,30 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "ASHA Sakhi – AI-Powered Health Assistance Platform",
-      description: `Developed an AI-powered, multilingual healthcare web app for ASHA workers, automating 70% of daily tasks and reducing consultation time by 40–50%. Integrated voice-based symptom analysis (92% accuracy), speech-to-text and text-to-speech modules, and Google Maps with an AI recommender, improving rural healthcare access and serving 1,000+ users.`,
+      title: "NeuroTrace - Cognitive Observability Platform",
+      description:
+        "Built an OS-level cognitive-state monitoring platform that passively infers focus, confusion, fatigue, and attention residue from keyboard, mouse, app-context, and webcam signals across desktop workflows. Built a multi-task LSTM pipeline trained on 1.5M synthetic telemetry windows, exported it to ONNX for on-device inference in under 5 ms per window, and integrated FastAPI, WebSocket streaming, and React analytics dashboards.",
+      image: "/projects/neuroTrace.png",
+      tags: [
+        "AI/ML",
+        "LSTM",
+        "ONNX",
+        "FastAPI",
+        "WebSockets",
+        "React.js",
+        "Telemetry",
+        "Computer Vision",
+        "On-Device Inference",
+        "Hackathon",
+      ],
+      category: "fullstack + aiml",
+      github: "https://github.com/Team-CoreX-SIESGST/CodeCrafters3_0",
+      live: "https://github.com/Team-CoreX-SIESGST/CodeCrafters3_0",
+    },
+    {
+      title: "ASHA Sakhi - AI-Powered Health Assistance Platform",
+      description:
+        "Developed an AI-powered, multilingual healthcare web app for ASHA workers, automating 70% of daily tasks and reducing consultation time by 40-50%. Integrated voice-based symptom analysis (92% accuracy), speech-to-text and text-to-speech modules, and Google Maps with an AI recommender, improving rural healthcare access and serving 1,000+ users.",
       image: "/projects/asha.png",
       tags: [
         "AI/ML",
@@ -40,8 +64,9 @@ const Projects = () => {
       live: "https://asha-workers-pi.vercel.app/",
     },
     {
-      title: "Red Apple Cars – Admin Dashboard (CMS)",
-      description: `Architected and led development of a production-grade CMS for Red Apple Cars, automating 70% of staff workflows and improving system performance by 45% with Redis caching and SSE. Implemented bulk car operations with Excel/PDF generation, integrated CI/CD pipelines, explored AWS SQS for scalability, and mentored interns to ensure high backend code quality.`,
+      title: "Red Apple Cars - Admin Dashboard (CMS)",
+      description:
+        "Architected and led development of a production-grade CMS for Red Apple Cars, automating 70% of staff workflows and improving system performance by 45% with Redis caching and SSE. Implemented bulk car operations with Excel/PDF generation, integrated CI/CD pipelines, explored AWS SQS for scalability, and mentored interns to ensure high backend code quality.",
       image: "/projects/red_apple_cars_dashboard.png",
       tags: [
         "Next.js",
@@ -64,9 +89,8 @@ const Projects = () => {
     },
     {
       title: "Pradha Dashboard",
-      description: `Created an admin dashboard for Pradha to enable real-time management of products, users, and content.
-    Built with Next.js, Tailwind, and Shadcn, ensuring a clean, responsive, and intuitive interface.
-    Focused on delivering a smooth admin experience with efficient workflows and easy content control.`,
+      description:
+        "Created an admin dashboard for Pradha to enable real-time management of products, users, and content. Built with Next.js, Tailwind, and Shadcn, ensuring a clean, responsive, and intuitive interface. Focused on delivering a smooth admin experience with efficient workflows and easy content control.",
       image: "/projects/pradhaDashboard.png",
       tags: [
         "Next.js",
@@ -82,8 +106,9 @@ const Projects = () => {
       live: "https://pradha-dashboard-main.vercel.app",
     },
     {
-      title: "StreetConnect – Empowering Street Food Ecosystems",
-      description: `Developed and deployed a real-time street food marketplace using Next.js, Express.js, and MongoDB, enhancing vendor-supplier trust by 60% with role-based modules. Optimized database queries by 20%, automated 50% of operational tasks, integrated Razorpay for secure payments, and led a 4-member team through the full development lifecycle on Vercel.`,
+      title: "StreetConnect - Empowering Street Food Ecosystems",
+      description:
+        "Developed and deployed a real-time street food marketplace using Next.js, Express.js, and MongoDB, enhancing vendor-supplier trust by 60% with role-based modules. Optimized database queries by 20%, automated 50% of operational tasks, integrated Razorpay for secure payments, and led a 4-member team through the full development lifecycle on Vercel.",
       image: "/projects/street.png",
       tags: [
         "Next.js",
@@ -102,7 +127,8 @@ const Projects = () => {
     },
     {
       title: "Multi-Agent AI Reasoning & Evaluation System",
-      description: `Designed and implemented a multi-agent AI orchestration system that processes user queries through multiple planner–researcher pipelines (DeepSeek, Grok, Gemini, and custom planners). Each planner generates structured responses, which are iteratively reviewed by corresponding researcher agents to identify gaps, issues, and improvements.The system supports feedback loops, issue tracking across iterations, and response ranking for optimal decision-making.`,
+      description:
+        "Designed and implemented a multi-agent AI orchestration system that processes user queries through multiple planner-researcher pipelines (DeepSeek, Grok, Gemini, and custom planners). Each planner generates structured responses, which are iteratively reviewed by corresponding researcher agents to identify gaps, issues, and improvements. The system supports feedback loops, issue tracking across iterations, and response ranking for optimal decision-making.",
       image: "/projects/project_4.png",
       tags: [
         "AI Agents",
@@ -122,8 +148,8 @@ const Projects = () => {
     },
     {
       title: "BudgetGuard - Recursion 6.0",
-      description: `Built a smart budget assistant that categorizes transactions, detects anomalies, forecasts expenses, and alerts users before they exceed budgets and spending control.
-Integrated ML models to enable personalized financial tracking, insightful trend analysis, and real-time decision-making support through a secure and user-friendly interface.`,
+      description:
+        "Built a smart budget assistant that categorizes transactions, detects anomalies, forecasts expenses, and alerts users before they exceed budgets and spending control. Integrated ML models to enable personalized financial tracking, insightful trend analysis, and real-time decision-making support through a secure and user-friendly interface.",
       image: "/projects/project_1.png",
       tags: [
         "ML",
@@ -142,8 +168,8 @@ Integrated ML models to enable personalized financial tracking, insightful trend
     },
     {
       title: "InvestoMate - Code Crafters 2.0",
-      description: `Created an investment portal to manage stocks, bonds, and insurance with features like investment suggestions, profit estimation, asset transactions, and balance tracking.
-The project was built using the MVC architecture to ensure modular, scalable, and maintainable code throughout the application.`,
+      description:
+        "Created an investment portal to manage stocks, bonds, and insurance with features like investment suggestions, profit estimation, asset transactions, and balance tracking. The project was built using the MVC architecture to ensure modular, scalable, and maintainable code throughout the application.",
       image: "/projects/project_2.png",
       tags: [
         "MUI",
@@ -162,9 +188,8 @@ The project was built using the MVC architecture to ensure modular, scalable, an
     },
     {
       title: "Pradha",
-      description: `Developed Pradha, a client-focused website using Next.js, MongoDB, Tailwind, Shadcn, and JavaScript for modern UI.
-    Implemented Redux for efficient state management and Redis for high-performance caching and data access.
-    Collaborated with the team to ensure seamless functionality, scalability, and a smooth user experience.`,
+      description:
+        "Developed Pradha, a client-focused website using Next.js, MongoDB, Tailwind, Shadcn, and JavaScript for modern UI. Implemented Redux for efficient state management and Redis for high-performance caching and data access. Collaborated with the team to ensure seamless functionality, scalability, and a smooth user experience.",
       image: "/projects/PradhaFrontend.png",
       tags: [
         "MongoDB",
@@ -182,9 +207,8 @@ The project was built using the MVC architecture to ensure modular, scalable, an
     },
     {
       title: "ClipVerse",
-      description: `Developed a YouTube-inspired platform using React, Node.js, Express, MongoDB, and Zustand with secure JWT authentication.
-    Implemented video upload, edit, delete, likes, comments, subscriptions, playlists, and tweet-like interactions.
-    Integrated Cloudinary for efficient video and thumbnail storage to enhance media management.`,
+      description:
+        "Developed a YouTube-inspired platform using React, Node.js, Express, MongoDB, and Zustand with secure JWT authentication. Implemented video upload, edit, delete, likes, comments, subscriptions, playlists, and tweet-like interactions. Integrated Cloudinary for efficient video and thumbnail storage to enhance media management.",
       image: "/projects/clipVerse.png",
       tags: [
         "React",
@@ -202,8 +226,8 @@ The project was built using the MVC architecture to ensure modular, scalable, an
     },
     {
       title: "InsightEd - Err404 6.0",
-      description: `Worked on a data-driven solution for college admission prediction and resource planning using AI/ML techniques and statistical analysis.
-Implemented predictive models and scenario-based simulations to help institutions allocate teaching staff, infrastructure, and financial resources more efficiently and plan ahead for upcoming academic sessions.`,
+      description:
+        "Worked on a data-driven solution for college admission prediction and resource planning using AI/ML techniques and statistical analysis. Implemented predictive models and scenario-based simulations to help institutions allocate teaching staff, infrastructure, and financial resources more efficiently and plan ahead for upcoming academic sessions.",
       image: "/projects/project_3.png",
       tags: [
         "AI/ML",
@@ -324,11 +348,13 @@ Implemented predictive models and scenario-based simulations to help institution
 
   const blogSectionRef = useRef<HTMLElement>(null);
   const initialLoad = useRef(true);
+
   useEffect(() => {
     if (initialLoad.current) {
       initialLoad.current = false;
       return;
     }
+
     if (blogSectionRef.current) {
       blogSectionRef.current.scrollIntoView({
         behavior: "smooth",
@@ -365,7 +391,6 @@ Implemented predictive models and scenario-based simulations to help institution
           <div className="w-24 h-1 bg-green-400 mx-auto"></div>
         </motion.div>
 
-        {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {filters.map((filter) => (
             <motion.button
@@ -386,7 +411,6 @@ Implemented predictive models and scenario-based simulations to help institution
           ))}
         </div>
 
-        {/* Projects Grid with Animated Transitions */}
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={`${currentPage}-${activeFilter}`}
@@ -418,7 +442,6 @@ Implemented predictive models and scenario-based simulations to help institution
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Project Image */}
                   <div className="relative aspect-video overflow-hidden">
                     <motion.img
                       src={project.image}
@@ -431,7 +454,6 @@ Implemented predictive models and scenario-based simulations to help institution
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   </div>
 
-                  {/* Project Content */}
                   <div className="p-6 flex flex-col flex-grow">
                     <h3
                       className={`text-xl font-bold mb-3 ${
@@ -448,7 +470,6 @@ Implemented predictive models and scenario-based simulations to help institution
                       {project.description}
                     </p>
 
-                    {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, tagIndex) => (
                         <motion.span
@@ -465,7 +486,6 @@ Implemented predictive models and scenario-based simulations to help institution
                       ))}
                     </div>
 
-                    {/* Project Links */}
                     <div className="flex gap-3">
                       <Link
                         href={project.github}
